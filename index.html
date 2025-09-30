@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Владислав Наумов | Системный разработчик C/C++</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #151515;
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --text: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border: #334155;
+            --accent: #3b82f6;
+            --success: #10b981;
+        }
+        
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg-dark);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Многослойный фон с эффектом параллакса */
+        .parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .parallax-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .layer-1 {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            z-index: 1;
+        }
+
+        .layer-2 {
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
+            z-index: 2;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .layer-3 {
+            background-image: 
+                radial-gradient(circle at 60% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 30% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 30%);
+            z-index: 3;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+
+        .layer-4 {
+            background-image: 
+                linear-gradient(45deg, transparent 49%, rgba(37, 99, 235, 0.03) 50%, transparent 51%),
+                linear-gradient(-45deg, transparent 49%, rgba(37, 99, 235, 0.03) 50%, transparent 51%);
+            background-size: 50px 50px;
+            z-index: 4;
+            animation: slide 30s linear infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(-10px, -15px) scale(1.02); }
+            50% { transform: translate(5px, -10px) scale(1.01); }
+            75% { transform: translate(15px, 5px) scale(1.02); }
+        }
+
+        @keyframes slide {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+        
+        /* Modern Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-dot {
+            color: var(--primary);
+        }
+
+        /* Обновленная навигация с двумя версиями */
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links.english {
+            gap: 1.8rem;
+        }
+
+        .nav-links.english a {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .nav-divider {
+            color: var(--border);
+            font-size: 1rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .hero-content {
+            flex: 1;
+            z-index: 10;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .profile-image {
+            width: 320px;
+            height: 320px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.3);
+            transition: transform 0.3s;
+            position: relative;
+            z-index: 10;
+            background: var(--bg-card);
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--text) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .feature-text {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 2.5rem;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .btn {
+            padding: 0.9rem 2.2rem;
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(37, 99, 235, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 5;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .hard-skills, .soft-skills {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+        }
+        
+        .skills-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .skills-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .skills-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        
+        .skills-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .skill-item:last-child {
+            border-bottom: none;
+        }
+        
+        .skill-name {
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .skill-level {
+            display: flex;
+            gap: 0.3rem;
+        }
+        
+        .skill-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--border);
+        }
+        
+        .skill-dot.active {
+            background: var(--primary);
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .project-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .project-content {
+            padding: 2.5rem;
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.2rem;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text);
+            line-height: 1.3;
+        }
+        
+        .project-year {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1rem;
+            background: rgba(37, 99, 235, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+        }
+        
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .project-features {
+            margin: 1.5rem 0;
+        }
+        
+        .project-features h4 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .project-features ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .project-features li {
+            margin-bottom: 0.6rem;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 1.5rem;
+            line-height: 1.5;
+        }
+        
+        .project-features li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+        
+        .tech-tag {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            font-weight: 500;
+        }
+        
+        /* Education Section */
+        .education-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .education-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            backdrop-filter: blur(10px);
+        }
+        
+        .education-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: white;
+            padding: 10px;
+            flex-shrink: 0;
+        }
+        
+        .education-content {
+            flex: 1;
+        }
+        
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .education-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        
+        .education-period {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.95rem;
+            background: rgba(37, 99, 235, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+        
+        .education-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+        
+        .education-details {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--text);
+            text-decoration: none;
+            padding: 1.2rem 2rem;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.3s;
+            font-weight: 500;
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-link:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            background: rgba(37, 99, 235, 0.05);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+        }
+        
+        .soon-badge {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            margin-left: 0.3rem;
+            font-style: italic;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            margin-top: 4rem;
+            position: relative;
+            z-index: 5;
+        }
+        
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            opacity: 0.7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .skills-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .education-card {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+            
+            .education-header {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-divider {
+                display: none;
+            }
+
+            .nav-links.english {
+                gap: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.english {
+                display: none;
+            }
+            
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 6rem;
+                min-height: auto;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .profile-image {
+                width: 280px;
+                height: 280px;
+                margin-bottom: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 250px;
+                justify-content: center;
+            }
+            
+            .section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-link {
+                width: 250px;
+                justify-content: center;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Многослойный фон -->
+    <div class="parallax-bg">
+        <div class="parallax-layer layer-1"></div>
+        <div class="parallax-layer layer-2"></div>
+        <div class="parallax-layer layer-3"></div>
+        <div class="parallax-layer layer-4"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">Vladislav<span class="logo-dot">Naumov</span></a>
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#about" class="active">Обо мне</a></li>
+                    <li><a href="#skills">Навыки</a></li>
+                    <li><a href="#projects">Проекты</a></li>
+                    <li><a href="#education">Образование</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+                <span class="nav-divider">|</span>
+                <ul class="nav-links english">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-code"></i>
+                Студент-разработчик C/C++
+            </div>
+            <h1>Владислав <span>Наумов</span></h1>
+            <p>Студент-разработчик, увлеченный системным программированием и созданием эффективных решений. Ищу <span class="feature-text">стажировку</span> для применения и развития навыков.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i>
+                    Смотреть проекты
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-paper-plane"></i>
+                    Связаться со мной
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://i.ibb.co/RpL8f19D/6y-L-6c-Kn-Td-N6-U4f-IEqito2-2f5wa-Zj-AQIKFdxapg-Kaef-TKwo-H33-Wgd-VSw-H91-Gtp-AMMph-ODftf-DQYpsg-XH.jpg" alt="Владислав Наумов" class="profile-image">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Обо мне</h2>
+            <p class="section-subtitle">Мой путь в программировании и профессиональные интересы</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Я студент 3 курса <span class="feature-text">НовГУ им. Ярослава Мудрого</span> по специальности "Прикладная математика и информатика". Специализируюсь на системном программировании и низкоуровневой разработке.</p>
+                
+                <p>Меня привлекает решение сложных технических задач и понимание того, как работают технологии на фундаментальном уровне. В своих проектах уделяю внимание не только функциональности, но и качеству кода, архитектуре и производительности.</p>
+                
+                <p>Особый интерес вызывают задачи, связанные с разработкой системного ПО, оптимизацией и работой с памятью. Реализация полных клонов утилит cat и grep позволила глубоко понять принципы работы операционных систем и компиляторов.</p>
+                
+                <p>В настоящее время ищу возможности для применения своих навыков в реальных проектах и открыт для предложений о стажировке или junior-позиции.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Мои навыки</h2>
+            <p class="section-subtitle">Технические знания и личные качества, которые я развиваю</p>
+        </div>
+        
+        <div class="skills-container">
+            <div class="hard-skills">
+                <div class="skills-header">
+                    <div class="skills-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="skills-title">Технические навыки</h3>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <span class="skill-name">C/C++ Разработка</span>
+                        <div class="skill-level">
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot"></div>
+                            <div class="skill-dot"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Системное программирование</span>
+                        <div class="skill-level">
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot"></div>
+                            <div class="skill-dot"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Linux / Bash</span>
+                        <div class="skill-level">
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot"></div>
+                            <div class="skill-dot"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Git / GitLab</span>
+                        <div class="skill-level">
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot"></div>
+                            <div class="skill-dot"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Алгоритмы и ООП</span>
+                        <div class="skill-level">
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="soft-skills">
+                <div class="skills-header">
+                    <div class="skills-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="skills-title">Личные качества</h3>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <span class="skill-name">Упорство и настойчивость</span>
+                        <div class="skill-level">
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Лидерство и команда</span>
+                        <div class="skill-level">
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot"></div>
+                            <div class="skill-dot"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Аналитическое мышление</span>
+                        <div class="skill-level">
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Решение проблем</span>
+                        <div class="skill-level">
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Самообучение</span>
+                        <div class="skill-level">
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                            <div class="skill-dot active"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Мои проекты</h2>
+            <p class="section-subtitle">Учебные и личные проекты, демонстрирующие мой прогресс в разработке</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Клоны CAT & GREP на C</h3>
+                        <div class="project-year">2025</div>
+                    </div>
+                    <p class="project-description">Реализации системных утилит с поддержкой основных флагов. Учебный проект для глубокого понимания системного программирования.</p>
+                    
+                    <div class="project-features">
+                        <h4><i class="fas fa-star"></i> Ключевые особенности:</h4>
+                        <ul>
+                            <li>Совместимость с основными флагами оригинальных утилит</li>
+                            <li>Работа с файлами и стандартными потоками</li>
+                            <li>Обработка аргументов командной строки</li>
+                            <li>Оптимизация для работы с текстовыми данными</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-tech">
+                        <span class="tech-tag">C</span>
+                        <span class="tech-tag">Linux</span>
+                        <span class="tech-tag">System Calls</span>
+                        <span class="tech-tag">POSIX</span>
+                        <span class="tech-tag">Bash</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-badge">Групповой</div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Game of Life для Linux</h3>
+                        <div class="project-year">2024</div>
+                    </div>
+                    <p class="project-description">Консольная реализация клеточного автомата "Игра Жизнь" с расширенной функциональностью. Проект разрабатывался в команде из 3 человек.</p>
+                    
+                    <div class="project-features">
+                        <h4><i class="fas fa-users"></i> Роль: Тимлид</h4>
+                        <ul>
+                            <li>Координация работы команды и распределение задач</li>
+                            <li>Проведение код-ревью и контроль качества</li>
+                            <li>Разработка архитектуры и основных модулей</li>
+                            <li>Интеграция компонентов и финальное тестирование</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-features">
+                        <h4><i class="fas fa-cog"></i> Функциональность:</h4>
+                        <ul>
+                            <li>Запуск через bash с параметрами командной строки</li>
+                            <li>Выбор из предустановленных шаблонов</li>
+                            <li>Регулировка скорости симуляции в реальном времени</li>
+                            <li>Интерактивное управление во время выполнения</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-tech">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Linux</span>
+                        <span class="tech-tag">Bash Scripting</span>
+                        <span class="tech-tag">ООП</span>
+                        <span class="tech-tag">Team Leadership</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Система тестирования</h3>
+                        <div class="project-year">2023</div>
+                    </div>
+                    <p class="project-description">Платформа для создания и прохождения тестов с системой ролевой авторизации и ведением статистики.</p>
+                    
+                    <div class="project-features">
+                        <h4><i class="fas fa-check-circle"></i> Реализовано:</h4>
+                        <ul>
+                            <li>Система аутентификации (администратор/пользователь)</li>
+                            <li>CRUD операции с тестами и вопросами</li>
+                            <li>Статистика результатов и история прохождений</li>
+                            <li>Валидация ввода и обработка ошибок</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-tech">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Authentication</span>
+                        <span class="tech-tag">File I/O</span>
+                        <span class="tech-tag">Data Structures</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Игра "Виселица"</h3>
+                        <div class="project-year">2022</div>
+                    </div>
+                    <p class="project-description">Одна из первых серьезных работ — классическая игра с системой загрузки слов из файлов и интерактивным консольным интерфейсом.</p>
+                    
+                    <div class="project-features">
+                        <h4><i class="fas fa-gamepad"></i> Особенности:</h4>
+                        <ul>
+                            <li>Динамическая загрузка словарей из файлов</li>
+                            <li>Система подсчета очков и прогресса</li>
+                            <li>Валидация пользовательского ввода</li>
+                            <li>Модульная архитектура приложения</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-tech">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">ООП</span>
+                        <span class="tech-tag">File Handling</span>
+                        <span class="tech-tag">STL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Образование</h2>
+            <p class="section-subtitle">Академическая подготовка и дополнительное обучение</p>
+        </div>
+        <div class="education-timeline">
+            <!-- НовГУ теперь на первом месте -->
+            <div class="education-card">
+                <img src="https://i.ibb.co/f5sMVbP/logo.png" alt="НовГУ" class="education-logo">
+                <div class="education-content">
+                    <div class="education-header">
+                        <h3 class="education-title">Новгородский Государственный Университет им. Ярослава Мудрого (НовГУ)</h3>
+                        <div class="education-period">2023 - 2027</div>
+                    </div>
+                    <div class="education-subtitle">Политехнический Институт • Прикладная математика и информатика • 3 курс</div>
+                    <div class="education-details">
+                        <p>Углубленное изучение математических основ информатики, алгоритмов, структур данных и системного программирования. Активное участие в проектной деятельности, развитие навыков командной работы и управления проектами.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="education-card">
+                <img src="https://i.ibb.co/VcyD6TKt/shkola-21-logo.png" alt="Школа 21" class="education-logo">
+                <div class="education-content">
+                    <div class="education-header">
+                        <h3 class="education-title">Школа 21 от Сбера</h3>
+                        <div class="education-period">2024 - настоящее время</div>
+                    </div>
+                    <div class="education-subtitle">Программа дополнительного образования в области программирования</div>
+                    <div class="education-details">
+                        <p>Обучение по уникальной методике peer-to-peer, основанной на практическом решении задач. Углубленное изучение алгоритмов, структур данных, системного программирования и разработки на C/C++.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Компьютерная академия TOP теперь на последнем месте -->
+            <div class="education-card">
+                <img src="https://i.ibb.co/DDS5bG8p/109361058.png" alt="Компьютерная академия TOP" class="education-logo">
+                <div class="education-content">
+                    <div class="education-header">
+                        <h3 class="education-title">Компьютерная академия TOP</h3>
+                        <div class="education-period">2021 - 2023</div>
+                    </div>
+                    <div class="education-subtitle">Программа дополнительного образования в области IT</div>
+                    <div class="education-details">
+                        <p>Изучение основ программирования, компьютерных наук и современных IT-технологий. Получил базовые знания, которые стали фундаментом для дальнейшего развития в области системного программирования.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="section-header">
+            <h2 class="section-title">Контакты</h2>
+            <p class="section-subtitle">Всегда открыт для новых возможностей и профессионального общения</p>
+        </div>
+        <div class="contact-links">
+            <a href="mailto:blads.vytro@gmail.com" class="contact-link">
+                <i class="fas fa-envelope"></i>
+                <span>blads.vytro@gmail.com</span>
+            </a>
+            <a href="https://t.me/Blads_VYTro" class="contact-link">
+                <i class="fab fa-telegram"></i>
+                <span>Telegram</span>
+            </a>
+            <a href="https://github.com/bladsvytro" class="contact-link">
+                <i class="fab fa-github"></i>
+                <span>GitHub <span class="soon-badge">(скоро)</span></span>
+            </a>
+            <a href="https://gitlab.com/vytro" class="contact-link">
+                <i class="fab fa-gitlab"></i>
+                <span>GitLab <span class="soon-badge">(скоро)</span></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Владислав Наумов • Студент-разработчик</p>
+        <p class="copyright">&copy; 2025</p>
+    </footer>
+
+    <script>
+        // JavaScript для эффекта параллакса
+        document.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallaxLayers = document.querySelectorAll('.parallax-layer');
+            
+            parallaxLayers.forEach((layer, index) => {
+                const speed = 0.5 * (index * 0.3);
+                const yPos = -(scrolled * speed);
+                layer.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    // Update active nav link
+                    document.querySelectorAll('.nav-links a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    document.querySelectorAll('.nav-links.english a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Also activate corresponding link in other language
+                    const href = this.getAttribute('href');
+                    const correspondingLink = document.querySelector(`.nav-links.english a[href="${href}"]`);
+                    if (correspondingLink) {
+                        correspondingLink.classList.add('active');
+                    }
+                    
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const englishLinks = document.querySelectorAll('.nav-links.english a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+
+            englishLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Add loading animation for elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.skill-category, .project-card, .education-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Add hover effect for project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
