@@ -32,6 +32,22 @@ filters.forEach((btn) => {
   });
 });
 
+/* Типизатор стека в hero (изюминка) */
+const typed = document.getElementById("typed");
+if (typed && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const words = ["gRPC-сервисы", "Kafka и Redis", "PostgreSQL", "Docker · Linux", "распределённые системы"];
+  let wi = 0, ci = 0, deleting = false;
+  const tick = () => {
+    const w = words[wi];
+    typed.textContent = w.slice(0, ci);
+    if (!deleting && ci < w.length) { ci++; setTimeout(tick, 75); }
+    else if (!deleting && ci === w.length) { deleting = true; setTimeout(tick, 1500); }
+    else if (deleting && ci > 0) { ci--; setTimeout(tick, 40); }
+    else { deleting = false; wi = (wi + 1) % words.length; setTimeout(tick, 300); }
+  };
+  tick();
+} else if (typed) { typed.textContent = "gRPC · Kafka · Redis · Docker"; }
+
 /* Reveal */
 const reveals = document.querySelectorAll("[data-reveal]");
 if (reveals.length && "IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {

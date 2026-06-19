@@ -147,6 +147,24 @@ h1,h2,h3{font-family:var(--font-display);line-height:1.1;font-weight:700;letter-
 [data-reveal].is-visible{opacity:1;transform:none}
 .is-hidden{display:none!important}
 
+/* Hero identity: avatar + status (изюминка) */
+.hero__id{display:flex;align-items:center;gap:1rem;margin-bottom:1.4rem}
+.hero__avatar{position:relative;width:88px;height:88px;border-radius:50%;padding:3px;display:inline-grid;place-items:center;
+  background:conic-gradient(from 0deg,var(--go),var(--violet),var(--go-2),var(--go));animation:spin 6s linear infinite}
+.hero__avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid var(--bg);background:var(--surface)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.hero__avatar{animation:none}}
+.status{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;color:var(--muted);background:var(--surface);border:1px solid var(--line);padding:.4rem .9rem;border-radius:var(--r-full)}
+.status i{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 0 0 rgba(52,211,153,.6);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,153,.5)}70%{box-shadow:0 0 0 9px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+/* typewriter */
+.typed{color:var(--go-2)} .caret{color:var(--go-2);animation:blink 1s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+/* animated aurora on hero glow */
+.hero__glow{animation:aurora 14s ease-in-out infinite alternate}
+@keyframes aurora{0%{transform:translate3d(-3%,0,0) scale(1)}100%{transform:translate3d(4%,2%,0) scale(1.12)}}
+@media (prefers-reduced-motion:reduce){.hero__glow,.caret,.status i{animation:none}}
+
 /* Responsive */
 @media (min-width:640px){ .stats{grid-template-columns:repeat(4,1fr)} .grid{grid-template-columns:repeat(2,1fr)} .skills{grid-template-columns:repeat(2,1fr)} }
 @media (min-width:920px){ .hero__inner{grid-template-columns:1.15fr .85fr} .grid{grid-template-columns:repeat(3,1fr)} .skills{grid-template-columns:repeat(4,1fr)} }

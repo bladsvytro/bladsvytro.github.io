@@ -67,11 +67,15 @@
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="container hero__inner">
         <div data-reveal>
+          <div class="hero__id">
+            <span class="hero__avatar"><img src="assets/img/avatar.jpg" alt="Владислав Наумов" /></span>
+            <span class="status"><i></i> Доступен для работы</span>
+          </div>
           <p class="eyebrow">Backend-разработчик</p>
           <h1 class="hero__title">Пишу <span class="grad">бэкенд на Go</span><br>и довожу проекты до продакшена</h1>
-          <p class="hero__role">Go · gRPC · PostgreSQL · Kafka · Redis · Docker · Linux</p>
+          <p class="hero__role">Go&nbsp;·&nbsp;<span id="typed" class="typed"></span><span class="caret">▋</span></p>
           <p class="hero__lead">Создаю сервисы и API на Go, разбираюсь в C и Python. В портфолио — пет-проекты,
-            фриланс-лендинги под ключ и Telegram-боты. Открыт к стажировке и junior-позициям.</p>
+            фриланс-лендинги под ключ и Telegram-боты. Открыт к новым проектам и интересным задачам.</p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="#projects">Смотреть проекты</a>
             <a class="btn btn--ghost" href="assets/resume-naumov.pdf" download>Скачать резюме (PDF)</a>
@@ -111,9 +115,10 @@
       <div class="container">
         <div class="section__head" data-reveal>
           <p class="eyebrow">О себе</p>
-          <h2 class="section__title">Junior, который доводит до результата</h2>
-          <p class="section__subtitle">Учусь backend-разработке на практике: пишу сервисы на Go, изучаю
-            системное программирование на C, беру фриланс-заказы на лендинги и ботов — чтобы расти на реальных задачах.</p>
+          <h2 class="section__title">Инженер, который доводит до результата</h2>
+          <p class="section__subtitle">Проектирую и собираю сервисы на Go, разбираюсь в системном
+            программировании на C, беру фриланс-заказы на лендинги и ботов — и довожу каждый проект до
+            рабочего, задеплоенного состояния.</p>
         </div>
         <div class="stats" data-reveal>
           <div class="stat"><b>15</b><span>проектов в портфолио</span></div>
@@ -169,11 +174,9 @@
 
           <!-- ===== Backend / pet projects ===== -->
           <article class="card" data-cat="backend">
-            <div class="card__media" style="display:grid;place-items:center;background:linear-gradient(135deg,#0d2b33,#10202e)">
-              <span style="font-size:3.4rem">💬</span><span class="card__badge">Go · TypeScript</span>
-            </div>
+            <div class="card__media"><img class="shot" src="assets/img/messenger.png" alt="Мессенджер BLADS — интерфейс" loading="lazy" /><span class="card__badge">Go · TypeScript</span></div>
             <div class="card__body">
-              <h3 class="card__title">Мессенджер реального времени</h3>
+              <h3 class="card__title">BLADS — мессенджер реального времени</h3>
               <p class="card__desc">Полноценный мессенджер: бэкенд-сервисы на Go, фронтенд на TypeScript,
                 обмен сообщениями в реальном времени, PostgreSQL и контейнеризация.</p>
               <div class="card__tags"><span class="tag">Go</span><span class="tag">TypeScript</span><span class="tag">WebSocket</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span></div>
@@ -389,8 +392,8 @@
       <div class="container contact" data-reveal>
         <p class="eyebrow" style="justify-content:center">Контакты</p>
         <h2 class="section__title">Готов к работе и стажировке</h2>
-        <p class="section__subtitle">Напишите в Telegram или на почту — отвечаю быстро. Открыт к junior-позициям
-          backend (Go) и фриланс-заказам.</p>
+        <p class="section__subtitle">Напишите в Telegram или на почту — отвечаю быстро. Открыт к работе
+          над backend-проектами (Go) и фриланс-заказам.</p>
         <div class="hero__contacts" style="justify-content:center;margin-top:1.6rem">
           <a class="chip" href="https://t.me/Blads_VYTro" target="_blank" rel="noopener">✈️ @Blads_VYTro</a>
           <a class="chip" href="mailto:blads.vytro@gmail.com">✉️ blads.vytro@gmail.com</a>
