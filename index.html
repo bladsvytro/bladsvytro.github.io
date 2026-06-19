@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Владислав Наумов — Backend-разработчик (Go) | Портфолио</title>
+  <meta name="description" content="Портфолио Владислава Наумова: backend-разработчик на Go. Пет-проекты (мессенджер, REST, gRPC, сервисы на Go и C), фриланс-лендинги и Telegram-боты. Резюме и контакты." />
+  <meta name="theme-color" content="#0a0d13" />
+  <link rel="canonical" href="https://bladsvytro.github.io/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Владислав Наумов — Backend-разработчик (Go)" />
+  <meta property="og:description" content="Пет-проекты на Go и C, фриланс-лендинги и Telegram-боты. Резюме и контакты." />
+  <meta property="og:image" content="https://bladsvytro.github.io/assets/img/og-cover.png" />
+  <meta property="og:url" content="https://bladsvytro.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%2300add8'/%3E%3Ctext x='16' y='22' font-size='16' font-family='monospace' fill='white' text-anchor='middle'%3E&gt;_%3C/text%3E%3C/svg%3E" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org", "@type": "Person",
+    "name": "Владислав Наумов", "jobTitle": "Backend-разработчик (Go)",
+    "address": { "@type": "PostalAddress", "addressLocality": "Великий Новгород", "addressCountry": "RU" },
+    "email": "mailto:blads.vytro@gmail.com", "telephone": "+79116141760",
+    "url": "https://bladsvytro.github.io/",
+    "sameAs": ["https://github.com/bladsvytro", "https://t.me/Blads_VYTro"],
+    "knowsAbout": ["Go", "gRPC", "PostgreSQL", "Redis", "Kafka", "Docker", "Linux", "C", "Python"]
+  }
+  </script>
+
+  <script type="module" src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#projects">Перейти к проектам</a>
+
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="logo" href="#top" aria-label="На главную">
+        <span class="logo__mark">&gt;_</span><span><b>Владислав</b> <span>Наумов</span></span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger" aria-hidden="true"></span><span class="u-visually-hidden">Меню</span>
+        </button>
+        <ul class="nav__menu" id="nav-menu">
+          <li><a href="#about">О себе</a></li>
+          <li><a href="#skills">Навыки</a></li>
+          <li><a href="#projects">Проекты</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--ghost btn--sm" href="resume.html">📄 Резюме</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div data-reveal>
+          <p class="eyebrow">Backend-разработчик</p>
+          <h1 class="hero__title">Пишу <span class="grad">бэкенд на Go</span><br>и довожу проекты до продакшена</h1>
+          <p class="hero__role">Go · gRPC · PostgreSQL · Kafka · Redis · Docker · Linux</p>
+          <p class="hero__lead">Создаю сервисы и API на Go, разбираюсь в C и Python. В портфолио — пет-проекты,
+            фриланс-лендинги под ключ и Telegram-боты. Открыт к стажировке и junior-позициям.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects">Смотреть проекты</a>
+            <a class="btn btn--ghost" href="assets/resume-naumov.pdf" download>Скачать резюме (PDF)</a>
+          </div>
+          <div class="hero__contacts">
+            <a class="chip" href="https://github.com/bladsvytro" target="_blank" rel="noopener">🐙 GitHub</a>
+            <a class="chip" href="https://t.me/Blads_VYTro" target="_blank" rel="noopener">✈️ @Blads_VYTro</a>
+            <a class="chip" href="mailto:blads.vytro@gmail.com">✉️ Email</a>
+            <a class="chip" href="tel:+79116141760">📞 +7 911 614-17-60</a>
+            <span class="chip">📍 Великий Новгород</span>
+          </div>
+        </div>
+        <div data-reveal>
+          <div class="codecard">
+            <div class="codecard__bar"><i></i><i></i><i></i><span>main.go</span></div>
+<pre><span class="k">package</span> main
+
+<span class="k">import</span> (
+  <span class="s">"log"</span>
+  <span class="s">"net/http"</span>
+)
+
+<span class="c">// привет из портфолио 👋</span>
+<span class="k">func</span> <span class="f">main</span>() {
+  http.<span class="f">HandleFunc</span>(<span class="s">"/hire"</span>, <span class="k">func</span>(w http.ResponseWriter, r *http.Request) {
+    w.<span class="f">Write</span>([]<span class="k">byte</span>(<span class="s">"Владислав Наумов — Go backend"</span>))
+  })
+  log.<span class="f">Fatal</span>(http.<span class="f">ListenAndServe</span>(<span class="s">":8080"</span>, <span class="k">nil</span>))
+}</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / stats -->
+    <section class="section section--alt" id="about">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">О себе</p>
+          <h2 class="section__title">Junior, который доводит до результата</h2>
+          <p class="section__subtitle">Учусь backend-разработке на практике: пишу сервисы на Go, изучаю
+            системное программирование на C, беру фриланс-заказы на лендинги и ботов — чтобы расти на реальных задачах.</p>
+        </div>
+        <div class="stats" data-reveal>
+          <div class="stat"><b>15</b><span>проектов в портфолио</span></div>
+          <div class="stat"><b>Go · C · Py</b><span>основные языки</span></div>
+          <div class="stat"><b>10/10</b><span>проектов задеплоено</span></div>
+          <div class="stat"><b>Open</b><span>к работе и стажировке</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Стек</p>
+          <h2 class="section__title">Навыки и технологии</h2>
+        </div>
+        <div class="skills" data-reveal>
+          <div class="skillgroup"><h3>// языки</h3><div class="skillgroup__list">
+            <span class="tag">Go</span><span class="tag">C / C++</span><span class="tag">Python</span>
+            <span class="tag">TypeScript</span><span class="tag">SQL</span><span class="tag">HTML</span></div></div>
+          <div class="skillgroup"><h3>// backend</h3><div class="skillgroup__list">
+            <span class="tag">gRPC</span><span class="tag">REST</span><span class="tag">Kafka</span>
+            <span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">MySQL</span>
+            <span class="tag">ООП</span><span class="tag">Архитектура</span></div></div>
+          <div class="skillgroup"><h3>// devops · tools</h3><div class="skillgroup__list">
+            <span class="tag">Docker</span><span class="tag">Docker Compose</span><span class="tag">GitLab CI</span>
+            <span class="tag">Linux</span><span class="tag">Git</span><span class="tag">TCP/IP</span></div></div>
+          <div class="skillgroup"><h3>// ещё</h3><div class="skillgroup__list">
+            <span class="tag">NumPy</span><span class="tag">WebSocket</span><span class="tag">Makefile</span>
+            <span class="tag">Английский</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section section--alt" id="projects">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Портфолио</p>
+          <h2 class="section__title">Проекты</h2>
+          <p class="section__subtitle">Бэкенд-сервисы, фриланс-лендинги и Telegram-боты. Всё с исходниками и живыми демо.</p>
+        </div>
+
+        <div class="filters" data-reveal role="tablist">
+          <button class="filter is-active" data-filter="all">Все</button>
+          <button class="filter" data-filter="backend">Бэкенд (Go · C)</button>
+          <button class="filter" data-filter="landing">Лендинги</button>
+          <button class="filter" data-filter="bot">Telegram-боты</button>
+        </div>
+
+        <div class="grid" id="grid" data-reveal>
+
+          <!-- ===== Backend / pet projects ===== -->
+          <article class="card" data-cat="backend">
+            <div class="card__media" style="display:grid;place-items:center;background:linear-gradient(135deg,#0d2b33,#10202e)">
+              <span style="font-size:3.4rem">💬</span><span class="card__badge">Go · TypeScript</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Мессенджер реального времени</h3>
+              <p class="card__desc">Полноценный мессенджер: бэкенд-сервисы на Go, фронтенд на TypeScript,
+                обмен сообщениями в реальном времени, PostgreSQL и контейнеризация.</p>
+              <div class="card__tags"><span class="tag">Go</span><span class="tag">TypeScript</span><span class="tag">WebSocket</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/Blads_massanger" target="_blank" rel="noopener">🐙 Код на GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="backend">
+            <div class="card__media" style="display:grid;place-items:center;background:linear-gradient(135deg,#102a2e,#101a2b)">
+              <span style="font-size:3.4rem">🧩</span><span class="card__badge">Go · REST</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">REST-сервис (тестовое)</h3>
+              <p class="card__desc">Backend-сервис на Go с REST API, слоистой архитектурой, миграциями БД,
+                Docker и Makefile. Выполнено как тестовое задание Effective Mobile.</p>
+              <div class="card__tags"><span class="tag">Go</span><span class="tag">REST</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">Makefile</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/effective-mobile_test" target="_blank" rel="noopener">🐙 Код на GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="backend">
+            <div class="card__media" style="display:grid;place-items:center;background:linear-gradient(135deg,#0d2733,#161029)">
+              <span style="font-size:3.4rem">🔗</span><span class="card__badge">Go</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Сервис сокращения ссылок</h3>
+              <p class="card__desc">URL-shortener на Go: генерация коротких кодов, редирект, хранение ссылок.
+                Учебный сервис для отработки чистого Go и работы с хранилищем.</p>
+              <div class="card__tags"><span class="tag">Go</span><span class="tag">HTTP</span><span class="tag">Хранилище</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/Shortlink-servise-Go" target="_blank" rel="noopener">🐙 Код на GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="backend">
+            <div class="card__media" style="display:grid;place-items:center;background:linear-gradient(135deg,#23202e,#0f1622)">
+              <span style="font-size:3.4rem">🛰️</span><span class="card__badge">C · epoll</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Асинхронный клиент-сервер</h3>
+              <p class="card__desc">Системное программирование на C: асинхронный TCP клиент-сервер на сокетах
+                (epoll), сборка через Makefile. Тестовое для NDM.</p>
+              <div class="card__tags"><span class="tag">C</span><span class="tag">epoll</span><span class="tag">TCP/IP</span><span class="tag">Sockets</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/NDM_Test" target="_blank" rel="noopener">🐙 Код на GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="backend">
+            <div class="card__media" style="display:grid;place-items:center;background:linear-gradient(135deg,#10222e,#1a1726)">
+              <span style="font-size:3.4rem">🏠</span><span class="card__badge">Go · HTML</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Сайт аренды домов</h3>
+              <p class="card__desc">Веб-приложение для аренды жилья: бэкенд на Go с HTML-шаблонами,
+                каталог объявлений и страницы объектов.</p>
+              <div class="card__tags"><span class="tag">Go</span><span class="tag">HTML</span><span class="tag">Templates</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/home_Arenda" target="_blank" rel="noopener">🐙 Код на GitHub</a></div>
+            </div>
+          </article>
+
+          <!-- ===== Landings ===== -->
+          <article class="card" data-cat="landing">
+            <div class="card__media collage">
+              <img class="desk" src="assets/img/construction-desktop.png" alt="Лендинг строительной компании" loading="lazy" />
+              <img class="phone" src="assets/img/construction-mobile.png" alt="Мобильная версия" loading="lazy" />
+              <span class="card__badge">Лендинг</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">СтройРесурс — ремонт под ключ</h3>
+              <p class="card__desc">Лендинг строительной компании: калькулятор стоимости, форма заявки,
+                галерея, карта. Адаптив, SEO, деплой на GitHub Pages.</p>
+              <div class="card__tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">a11y</span></div>
+              <div class="card__links">
+                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/construction-landing/" target="_blank" rel="noopener">Демо ↗</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/construction-landing" target="_blank" rel="noopener">🐙</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="landing">
+            <div class="card__media collage">
+              <img class="desk" src="assets/img/nail-studio-desktop.png" alt="Лендинг студии маникюра" loading="lazy" />
+              <img class="phone" src="assets/img/nail-studio-mobile.png" alt="Мобильная версия" loading="lazy" />
+              <span class="card__badge">Лендинг</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Лакрица — студия маникюра</h3>
+              <p class="card__desc">Онлайн-запись (мастер/услуга/дата/время), галерея работ, прайс, мастера.
+                Пастельный дизайн, микроинтеракции, отправка в Telegram.</p>
+              <div class="card__tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">Telegram API</span></div>
+              <div class="card__links">
+                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/nail-studio-landing/" target="_blank" rel="noopener">Демо ↗</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/nail-studio-landing" target="_blank" rel="noopener">🐙</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="landing">
+            <div class="card__media collage">
+              <img class="desk" src="assets/img/legal-consult-desktop.png" alt="Лендинг юридической фирмы" loading="lazy" />
+              <img class="phone" src="assets/img/legal-consult-mobile.png" alt="Мобильная версия" loading="lazy" />
+              <span class="card__badge">Лендинг</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Лекс·Защита — юрфирма</h3>
+              <p class="card__desc">Премиум-лендинг: navy + золото, калькулятор стоимости, таймлайн ведения дела,
+                документы PDF, форма на Web3Forms. Антиква-типографика.</p>
+              <div class="card__tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">Web3Forms</span></div>
+              <div class="card__links">
+                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/legal-consult-landing/" target="_blank" rel="noopener">Демо ↗</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/legal-consult-landing" target="_blank" rel="noopener">🐙</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="landing">
+            <div class="card__media collage">
+              <img class="desk" src="assets/img/english-webinar-desktop.png" alt="Лендинг вебинара по английскому" loading="lazy" />
+              <img class="phone" src="assets/img/english-webinar-mobile.png" alt="Мобильная версия" loading="lazy" />
+              <span class="card__badge">Лендинг</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">SpeakUp — вебинар по английскому</h3>
+              <p class="card__desc">Регистрация на вебинар: живой таймер обратного отсчёта, программа, bento-блок,
+                ленивый YouTube, форма в Google Sheets. Glassmorphism.</p>
+              <div class="card__tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">Apps Script</span></div>
+              <div class="card__links">
+                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/english-webinar-landing/" target="_blank" rel="noopener">Демо ↗</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/english-webinar-landing" target="_blank" rel="noopener">🐙</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="landing">
+            <div class="card__media collage">
+              <img class="desk" src="assets/img/fitness-club-desktop.png" alt="Лендинг фитнес-клуба" loading="lazy" />
+              <img class="phone" src="assets/img/fitness-club-mobile.png" alt="Мобильная версия" loading="lazy" />
+              <span class="card__badge">Лендинг</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">ИМПУЛЬС — фитнес-клуб</h3>
+              <p class="card__desc">Энергичный лендинг: чёрный + неон, таблица расписания, карточки тренеров,
+                форма пробной тренировки в Telegram. Крупная типографика Oswald.</p>
+              <div class="card__tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">Grid</span></div>
+              <div class="card__links">
+                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/fitness-club-landing/" target="_blank" rel="noopener">Демо ↗</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/fitness-club-landing" target="_blank" rel="noopener">🐙</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ===== Bots ===== -->
+          <article class="card" data-cat="bot">
+            <div class="card__media"><img class="shot" src="assets/img/bot-construction.png" alt="Бот заявок строительной компании" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
+            <div class="card__body">
+              <h3 class="card__title">Бот заявок (стройка)</h3>
+              <p class="card__desc">FSM-заявка на замер, калькулятор стоимости на кнопках, уведомление менеджеру,
+                запись в Google Sheets.</p>
+              <div class="card__tags"><span class="tag">Python</span><span class="tag">aiogram 3</span><span class="tag">Google Sheets</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/construction-leadbot" target="_blank" rel="noopener">🐙 Код</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="bot">
+            <div class="card__media"><img class="shot" src="assets/img/bot-nail.png" alt="Бот записи к маникюру" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
+            <div class="card__body">
+              <h3 class="card__title">Бот записи (маникюр)</h3>
+              <p class="card__desc">Запись по слотам в SQLite, напоминание за 2 часа (APScheduler), портфолио по
+                категориям, админ-команды.</p>
+              <div class="card__tags"><span class="tag">Python</span><span class="tag">aiogram 3</span><span class="tag">SQLite</span><span class="tag">APScheduler</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/nail-booking-bot" target="_blank" rel="noopener">🐙 Код</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="bot">
+            <div class="card__media"><img class="shot" src="assets/img/bot-hr.png" alt="Бот HR-скрининга" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
+            <div class="card__body">
+              <h3 class="card__title">Бот HR-скрининга</h3>
+              <p class="card__desc">Анкета из 10 вопросов, автооценка по ключевым словам, хранение в SQLite,
+                отчёт по кандидату в чат HR.</p>
+              <div class="card__tags"><span class="tag">Python</span><span class="tag">aiogram 3</span><span class="tag">SQLite</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/hr-screening-bot" target="_blank" rel="noopener">🐙 Код</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="bot">
+            <div class="card__media"><img class="shot" src="assets/img/bot-shop.png" alt="Бот помощник магазина" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
+            <div class="card__body">
+              <h3 class="card__title">Бот-помощник магазина</h3>
+              <p class="card__desc">Трекинг заказа по номеру, FAQ на кнопках, связь с оператором, /myorders по
+                контакту. Redis/webhook опционально.</p>
+              <div class="card__tags"><span class="tag">Python</span><span class="tag">aiogram 3</span><span class="tag">Redis</span><span class="tag">Webhook</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/shop-assistant-bot" target="_blank" rel="noopener">🐙 Код</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="bot">
+            <div class="card__media"><img class="shot" src="assets/img/bot-resume.png" alt="Бот конструктор резюме" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
+            <div class="card__body">
+              <h3 class="card__title">Бот-конструктор резюме</h3>
+              <p class="card__desc">Пошаговый сбор данных, генерация HTML-резюме (с защитой от XSS) и PDF через
+                WeasyPrint, хранение в SQLite, редактирование.</p>
+              <div class="card__tags"><span class="tag">Python</span><span class="tag">aiogram 3</span><span class="tag">WeasyPrint</span><span class="tag">SQLite</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/resume-builder-bot" target="_blank" rel="noopener">🐙 Код</a></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container contact" data-reveal>
+        <p class="eyebrow" style="justify-content:center">Контакты</p>
+        <h2 class="section__title">Готов к работе и стажировке</h2>
+        <p class="section__subtitle">Напишите в Telegram или на почту — отвечаю быстро. Открыт к junior-позициям
+          backend (Go) и фриланс-заказам.</p>
+        <div class="hero__contacts" style="justify-content:center;margin-top:1.6rem">
+          <a class="chip" href="https://t.me/Blads_VYTro" target="_blank" rel="noopener">✈️ @Blads_VYTro</a>
+          <a class="chip" href="mailto:blads.vytro@gmail.com">✉️ blads.vytro@gmail.com</a>
+          <a class="chip" href="tel:+79116141760">📞 +7 911 614-17-60</a>
+          <a class="chip" href="https://github.com/bladsvytro" target="_blank" rel="noopener">🐙 github.com/bladsvytro</a>
+        </div>
+        <div class="hero__actions" style="justify-content:center;margin-top:1.8rem">
+          <a class="btn btn--primary" href="resume.html">Открыть резюме</a>
+          <a class="btn btn--ghost" href="assets/resume-naumov.pdf" download>Скачать PDF</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© <span id="year">2026</span> Владислав Наумов · Великий Новгород</p>
+      <p>Сделано вручную на HTML/CSS/JS · <a href="#top">наверх ↑</a></p>
+    </div>
+  </footer>
+</body>
+</html>

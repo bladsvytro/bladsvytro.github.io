@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Резюме — Наумов Владислав Владиславович | Backend-разработчик (Go)</title>
+  <meta name="description" content="Резюме: Наумов Владислав Владиславович, backend-разработчик на Go. Великий Новгород." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <style>
+    :root { --ink:#13202e; --muted:#54657a; --faint:#8a99ab; --accent:#0883a8; --line:#e4e9ef; --bg:#eef2f6; }
+    * { box-sizing:border-box; margin:0; }
+    body { font-family:"Inter",system-ui,sans-serif; color:var(--ink); background:var(--bg); line-height:1.55; }
+    .toolbar { max-width:820px; margin:18px auto 0; display:flex; gap:10px; justify-content:flex-end; padding:0 16px; }
+    .toolbar a { font-size:14px; text-decoration:none; padding:9px 16px; border-radius:8px; font-weight:600; }
+    .toolbar .print { background:var(--accent); color:#fff; }
+    .toolbar .back { background:#fff; color:var(--ink); border:1px solid var(--line); }
+    .sheet { max-width:820px; margin:16px auto 40px; background:#fff; border-radius:12px; overflow:hidden;
+             box-shadow:0 12px 40px rgba(19,32,46,.12); }
+    .head { background:linear-gradient(135deg,#0e2a3a,#0883a8); color:#fff; padding:36px 44px; }
+    .head h1 { font-size:28px; letter-spacing:-.01em; }
+    .head .role { font-size:17px; opacity:.92; margin-top:4px; }
+    .head .contacts { margin-top:16px; display:flex; flex-wrap:wrap; gap:8px 20px; font-size:14px; }
+    .head .contacts a { color:#fff; text-decoration:none; opacity:.95; }
+    .body { padding:30px 44px 40px; }
+    section { margin-bottom:24px; }
+    h2 { font-size:13px; text-transform:uppercase; letter-spacing:.09em; color:var(--accent);
+         border-bottom:2px solid var(--line); padding-bottom:6px; margin-bottom:12px; }
+    .lead { color:var(--muted); }
+    .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:6px 24px; }
+    .skills { display:flex; flex-wrap:wrap; gap:7px; }
+    .skills span { background:#eef6f9; color:#0a5e79; border:1px solid #d4e8ef; font-size:13px;
+                   padding:4px 10px; border-radius:6px; }
+    .job { margin-bottom:14px; }
+    .job h3 { font-size:15px; }
+    .job .meta { color:var(--accent); font-size:13px; font-weight:600; }
+    .job p { color:var(--muted); font-size:14px; margin-top:2px; }
+    .job a { color:var(--accent); text-decoration:none; font-size:13px; }
+    .muted { color:var(--faint); font-size:13px; }
+    @media print {
+      body { background:#fff; }
+      .toolbar { display:none; }
+      .sheet { box-shadow:none; margin:0; border-radius:0; max-width:none; }
+      @page { margin:14mm; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <a class="back" href="index.html">← В портфолио</a>
+    <a class="print" href="#" onclick="window.print();return false;">🖨 Печать / Сохранить в PDF</a>
+  </div>
+
+  <div class="sheet">
+    <div class="head">
+      <h1>Наумов Владислав Владиславович</h1>
+      <div class="role">Backend-разработчик (Go) · Junior</div>
+      <div class="contacts">
+        <span>📍 Великий Новгород</span>
+        <a href="tel:+79116141760">📞 +7 911 614-17-60</a>
+        <a href="mailto:blads.vytro@gmail.com">✉️ blads.vytro@gmail.com</a>
+        <a href="https://t.me/Blads_VYTro">✈️ @Blads_VYTro</a>
+        <a href="https://github.com/bladsvytro">🐙 github.com/bladsvytro</a>
+      </div>
+    </div>
+
+    <div class="body">
+      <section>
+        <h2>О себе</h2>
+        <p class="lead">Начинающий backend-разработчик. Основной стек — <b>Go</b>: пишу REST/gRPC-сервисы,
+          работаю с PostgreSQL, Redis, Kafka, Docker. Знаю системное программирование на C (сокеты, epoll),
+          использую Python. Активно развиваюсь на пет-проектах и фриланс-заказах, доводя их до рабочего
+          задеплоенного состояния. Открыт к стажировке и junior-позициям.</p>
+      </section>
+
+      <section>
+        <h2>Навыки</h2>
+        <div class="skills">
+          <span>Go</span><span>gRPC</span><span>REST</span><span>PostgreSQL</span><span>MySQL</span>
+          <span>Redis</span><span>Kafka</span><span>Docker</span><span>Docker Compose</span><span>GitLab CI</span>
+          <span>Linux</span><span>Git</span><span>TCP/IP</span><span>C / C++</span><span>Python</span>
+          <span>NumPy</span><span>ООП</span><span>Архитектура</span><span>TypeScript</span><span>HTML</span>
+          <span>Английский</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Проекты</h2>
+        <div class="job">
+          <h3>Мессенджер реального времени</h3>
+          <div class="meta">Go · TypeScript · WebSocket · PostgreSQL · Docker</div>
+          <p>Бэкенд-сервисы на Go и фронтенд на TypeScript, обмен сообщениями в реальном времени, контейнеризация.
+            <a href="https://github.com/bladsvytro/Blads_massanger">github.com/bladsvytro/Blads_massanger</a></p>
+        </div>
+        <div class="job">
+          <h3>REST-сервис (тестовое Effective Mobile)</h3>
+          <div class="meta">Go · REST · PostgreSQL · Docker · Makefile</div>
+          <p>Сервис с REST API, слоистой архитектурой и миграциями БД.
+            <a href="https://github.com/bladsvytro/effective-mobile_test">github.com/bladsvytro/effective-mobile_test</a></p>
+        </div>
+        <div class="job">
+          <h3>Асинхронный клиент-сервер</h3>
+          <div class="meta">C · epoll · TCP/IP · сокеты</div>
+          <p>Системное программирование: асинхронный TCP клиент-сервер на C (тестовое NDM).
+            <a href="https://github.com/bladsvytro/NDM_Test">github.com/bladsvytro/NDM_Test</a></p>
+        </div>
+        <div class="job">
+          <h3>Сервис сокращения ссылок · Сайт аренды домов</h3>
+          <div class="meta">Go · HTTP · HTML-шаблоны</div>
+          <p>URL-shortener на Go и веб-приложение аренды жилья (Go + HTML).
+            <a href="https://github.com/bladsvytro/Shortlink-servise-Go">Shortlink-servise-Go</a>,
+            <a href="https://github.com/bladsvytro/home_Arenda">home_Arenda</a></p>
+        </div>
+        <div class="job">
+          <h3>Фриланс: 5 лендингов + 5 Telegram-ботов</h3>
+          <div class="meta">HTML/CSS/JS · Python (aiogram 3) · SQLite · Docker</div>
+          <p>Адаптивные лендинги под ключ (с деплоем на GitHub Pages) и боты на aiogram 3 (FSM, БД,
+            интеграции). Витрина: <a href="https://bladsvytro.github.io/">bladsvytro.github.io</a></p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Образование</h2>
+        <p class="lead">Самостоятельное обучение backend-разработке (Go, системное программирование на C).
+          <span class="muted">[укажите учебное заведение/курсы и год при необходимости]</span></p>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
