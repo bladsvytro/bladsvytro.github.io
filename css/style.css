@@ -150,10 +150,8 @@ h1,h2,h3{font-family:var(--font-display);line-height:1.1;font-weight:700;letter-
 /* Hero identity: avatar + status (изюминка) */
 .hero__id{display:flex;align-items:center;gap:1rem;margin-bottom:1.4rem}
 .hero__avatar{position:relative;width:88px;height:88px;border-radius:50%;padding:3px;display:inline-grid;place-items:center;
-  background:conic-gradient(from 0deg,var(--go),var(--violet),var(--go-2),var(--go));animation:spin 6s linear infinite}
+  background:linear-gradient(135deg,var(--go),var(--violet))}
 .hero__avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid var(--bg);background:var(--surface)}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media (prefers-reduced-motion:reduce){.hero__avatar{animation:none}}
 .status{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;color:var(--muted);background:var(--surface);border:1px solid var(--line);padding:.4rem .9rem;border-radius:var(--r-full)}
 .status i{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 0 0 rgba(52,211,153,.6);animation:pulse 1.8s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,153,.5)}70%{box-shadow:0 0 0 9px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
