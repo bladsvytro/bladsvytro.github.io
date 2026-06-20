@@ -40,6 +40,7 @@
 </head>
 <body>
   <a class="skip-link" href="#projects">Перейти к проектам</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
   <header class="site-header" id="top">
     <div class="container site-header__inner">
@@ -68,7 +69,7 @@
       <div class="container hero__inner">
         <div data-reveal>
           <div class="hero__id">
-            <span class="hero__avatar"><img src="assets/img/avatar.jpg" alt="Владислав Наумов" /></span>
+            <span class="hero__avatar"><img src="assets/img/avatar.webp" alt="Владислав Наумов" /></span>
             <span class="status"><i></i> Доступен для работы</span>
           </div>
           <p class="eyebrow">Backend-разработчик</p>
@@ -124,7 +125,7 @@
           <div class="stat"><b>15</b><span>проектов в портфолио</span></div>
           <div class="stat"><b>Go · C · Py</b><span>основные языки</span></div>
           <div class="stat"><b>10/10</b><span>проектов задеплоено</span></div>
-          <div class="stat"><b>Open</b><span>к работе и стажировке</span></div>
+          <div class="stat"><b>Open</b><span>к работе и заказам</span></div>
         </div>
       </div>
     </section>
@@ -174,7 +175,7 @@
 
           <!-- ===== Backend / pet projects ===== -->
           <article class="card" data-cat="backend">
-            <div class="card__media"><img class="shot" src="assets/img/messenger.png" alt="Мессенджер BLADS — интерфейс" loading="lazy" /><span class="card__badge">Go · TypeScript</span></div>
+            <div class="card__media"><img class="shot" src="assets/img/messenger.webp" alt="Мессенджер BLADS — интерфейс" loading="lazy" /><span class="card__badge">Go · TypeScript</span></div>
             <div class="card__body">
               <h3 class="card__title">BLADS — мессенджер реального времени</h3>
               <p class="card__desc">Полноценный мессенджер: бэкенд-сервисы на Go, фронтенд на TypeScript,
@@ -185,20 +186,18 @@
           </article>
 
           <article class="card" data-cat="backend">
-            <div class="card__media" style="display:grid;place-items:center;background:linear-gradient(135deg,#102a2e,#101a2b)">
-              <span style="font-size:3.4rem">🧩</span><span class="card__badge">Go · REST</span>
-            </div>
+            <div class="card__media"><img class="shot" src="assets/img/rest-code.webp" alt="REST-сервис на Go — код main.go" loading="lazy" /><span class="card__badge">Go · Gin</span></div>
             <div class="card__body">
-              <h3 class="card__title">REST-сервис (тестовое)</h3>
-              <p class="card__desc">Backend-сервис на Go с REST API, слоистой архитектурой, миграциями БД,
-                Docker и Makefile. Выполнено как тестовое задание Effective Mobile.</p>
-              <div class="card__tags"><span class="tag">Go</span><span class="tag">REST</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">Makefile</span></div>
+              <h3 class="card__title">Subscription API (REST на Go)</h3>
+              <p class="card__desc">Сервис агрегации онлайн-подписок на Gin: CRUD + аналитика, Swagger-документация,
+                валидация (validator.v10), zap-логирование, юнит-тесты, graceful shutdown, Docker.</p>
+              <div class="card__tags"><span class="tag">Go</span><span class="tag">Gin</span><span class="tag">Swagger</span><span class="tag">PostgreSQL</span><span class="tag">Тесты</span><span class="tag">Docker</span></div>
               <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/effective-mobile_test" target="_blank" rel="noopener">🐙 Код на GitHub</a></div>
             </div>
           </article>
 
           <article class="card" data-cat="backend">
-            <div class="card__media"><img class="shot" src="assets/img/shortlink.jpg" alt="Сервис сокращения ссылок — интерфейс" loading="lazy" /><span class="card__badge">Go</span></div>
+            <div class="card__media"><img class="shot" src="assets/img/shortlink.webp" alt="Сервис сокращения ссылок — интерфейс" loading="lazy" /><span class="card__badge">Go</span></div>
             <div class="card__body">
               <h3 class="card__title">Сервис сокращения ссылок</h3>
               <p class="card__desc">URL-shortener на Go: генерация коротких кодов, редирект, хранение ссылок.
@@ -209,9 +208,7 @@
           </article>
 
           <article class="card" data-cat="backend">
-            <div class="card__media" style="display:grid;place-items:center;background:linear-gradient(135deg,#23202e,#0f1622)">
-              <span style="font-size:3.4rem">🛰️</span><span class="card__badge">C · epoll</span>
-            </div>
+            <div class="card__media"><img class="shot" src="assets/img/ndm-code.webp" alt="Асинхронный сервер на C — код server.c (epoll)" loading="lazy" /><span class="card__badge">C · epoll</span></div>
             <div class="card__body">
               <h3 class="card__title">Асинхронный клиент-сервер</h3>
               <p class="card__desc">Системное программирование на C: асинхронный TCP клиент-сервер на сокетах
@@ -222,7 +219,7 @@
           </article>
 
           <article class="card" data-cat="backend">
-            <div class="card__media"><img class="shot" src="assets/img/rental.jpg" alt="Сайт аренды домов — каталог" loading="lazy" style="object-position:center" /><span class="card__badge">Go · HTML</span></div>
+            <div class="card__media"><img class="shot" src="assets/img/rental.webp" alt="Сайт аренды домов — каталог" loading="lazy" style="object-position:center" /><span class="card__badge">Go · HTML</span></div>
             <div class="card__body">
               <h3 class="card__title">Сайт аренды домов</h3>
               <p class="card__desc">Веб-приложение для аренды жилья: бэкенд на Go с HTML-шаблонами,
@@ -235,8 +232,8 @@
           <!-- ===== Landings ===== -->
           <article class="card" data-cat="landing">
             <div class="card__media collage">
-              <img class="desk" src="assets/img/construction-desktop.png" alt="Лендинг строительной компании" loading="lazy" />
-              <img class="phone" src="assets/img/construction-mobile.png" alt="Мобильная версия" loading="lazy" />
+              <img class="desk" src="assets/img/construction-desktop.webp" alt="Лендинг строительной компании" loading="lazy" />
+              <img class="phone" src="assets/img/construction-mobile.webp" alt="Мобильная версия" loading="lazy" />
               <span class="card__badge">Лендинг</span>
             </div>
             <div class="card__body">
@@ -253,8 +250,8 @@
 
           <article class="card" data-cat="landing">
             <div class="card__media collage">
-              <img class="desk" src="assets/img/nail-studio-desktop.png" alt="Лендинг студии маникюра" loading="lazy" />
-              <img class="phone" src="assets/img/nail-studio-mobile.png" alt="Мобильная версия" loading="lazy" />
+              <img class="desk" src="assets/img/nail-studio-desktop.webp" alt="Лендинг студии маникюра" loading="lazy" />
+              <img class="phone" src="assets/img/nail-studio-mobile.webp" alt="Мобильная версия" loading="lazy" />
               <span class="card__badge">Лендинг</span>
             </div>
             <div class="card__body">
@@ -271,8 +268,8 @@
 
           <article class="card" data-cat="landing">
             <div class="card__media collage">
-              <img class="desk" src="assets/img/legal-consult-desktop.png" alt="Лендинг юридической фирмы" loading="lazy" />
-              <img class="phone" src="assets/img/legal-consult-mobile.png" alt="Мобильная версия" loading="lazy" />
+              <img class="desk" src="assets/img/legal-consult-desktop.webp" alt="Лендинг юридической фирмы" loading="lazy" />
+              <img class="phone" src="assets/img/legal-consult-mobile.webp" alt="Мобильная версия" loading="lazy" />
               <span class="card__badge">Лендинг</span>
             </div>
             <div class="card__body">
@@ -289,8 +286,8 @@
 
           <article class="card" data-cat="landing">
             <div class="card__media collage">
-              <img class="desk" src="assets/img/english-webinar-desktop.png" alt="Лендинг вебинара по английскому" loading="lazy" />
-              <img class="phone" src="assets/img/english-webinar-mobile.png" alt="Мобильная версия" loading="lazy" />
+              <img class="desk" src="assets/img/english-webinar-desktop.webp" alt="Лендинг вебинара по английскому" loading="lazy" />
+              <img class="phone" src="assets/img/english-webinar-mobile.webp" alt="Мобильная версия" loading="lazy" />
               <span class="card__badge">Лендинг</span>
             </div>
             <div class="card__body">
@@ -307,8 +304,8 @@
 
           <article class="card" data-cat="landing">
             <div class="card__media collage">
-              <img class="desk" src="assets/img/fitness-club-desktop.png" alt="Лендинг фитнес-клуба" loading="lazy" />
-              <img class="phone" src="assets/img/fitness-club-mobile.png" alt="Мобильная версия" loading="lazy" />
+              <img class="desk" src="assets/img/fitness-club-desktop.webp" alt="Лендинг фитнес-клуба" loading="lazy" />
+              <img class="phone" src="assets/img/fitness-club-mobile.webp" alt="Мобильная версия" loading="lazy" />
               <span class="card__badge">Лендинг</span>
             </div>
             <div class="card__body">
@@ -325,7 +322,7 @@
 
           <!-- ===== Bots ===== -->
           <article class="card" data-cat="bot">
-            <div class="card__media"><img class="shot" src="assets/img/bot-construction.png" alt="Бот заявок строительной компании" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
+            <div class="card__media"><img class="shot" src="assets/img/bot-construction.webp" alt="Бот заявок строительной компании" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
             <div class="card__body">
               <h3 class="card__title">Бот заявок (стройка)</h3>
               <p class="card__desc">FSM-заявка на замер, калькулятор стоимости на кнопках, уведомление менеджеру,
@@ -336,7 +333,7 @@
           </article>
 
           <article class="card" data-cat="bot">
-            <div class="card__media"><img class="shot" src="assets/img/bot-nail.png" alt="Бот записи к маникюру" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
+            <div class="card__media"><img class="shot" src="assets/img/bot-nail.webp" alt="Бот записи к маникюру" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
             <div class="card__body">
               <h3 class="card__title">Бот записи (маникюр)</h3>
               <p class="card__desc">Запись по слотам в SQLite, напоминание за 2 часа (APScheduler), портфолио по
@@ -347,7 +344,7 @@
           </article>
 
           <article class="card" data-cat="bot">
-            <div class="card__media"><img class="shot" src="assets/img/bot-hr.png" alt="Бот HR-скрининга" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
+            <div class="card__media"><img class="shot" src="assets/img/bot-hr.webp" alt="Бот HR-скрининга" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
             <div class="card__body">
               <h3 class="card__title">Бот HR-скрининга</h3>
               <p class="card__desc">Анкета из 10 вопросов, автооценка по ключевым словам, хранение в SQLite,
@@ -358,7 +355,7 @@
           </article>
 
           <article class="card" data-cat="bot">
-            <div class="card__media"><img class="shot" src="assets/img/bot-shop.png" alt="Бот помощник магазина" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
+            <div class="card__media"><img class="shot" src="assets/img/bot-shop.webp" alt="Бот помощник магазина" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
             <div class="card__body">
               <h3 class="card__title">Бот-помощник магазина</h3>
               <p class="card__desc">Трекинг заказа по номеру, FAQ на кнопках, связь с оператором, /myorders по
@@ -369,7 +366,7 @@
           </article>
 
           <article class="card" data-cat="bot">
-            <div class="card__media"><img class="shot" src="assets/img/bot-resume.png" alt="Бот конструктор резюме" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
+            <div class="card__media"><img class="shot" src="assets/img/bot-resume.webp" alt="Бот конструктор резюме" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
             <div class="card__body">
               <h3 class="card__title">Бот-конструктор резюме</h3>
               <p class="card__desc">Пошаговый сбор данных, генерация HTML-резюме (с защитой от XSS) и PDF через
@@ -392,12 +389,13 @@
           над backend-проектами (Go) и фриланс-заказам.</p>
         <div class="hero__contacts" style="justify-content:center;margin-top:1.6rem">
           <a class="chip" href="https://t.me/Blads_VYTro" target="_blank" rel="noopener">✈️ @Blads_VYTro</a>
-          <a class="chip" href="mailto:blads.vytro@gmail.com">✉️ blads.vytro@gmail.com</a>
+          <button class="chip" type="button" data-copy="blads.vytro@gmail.com">✉️ blads.vytro@gmail.com <span class="copy-hint">скопировать</span></button>
           <a class="chip" href="tel:+79116141760">📞 +7 911 614-17-60</a>
           <a class="chip" href="https://github.com/bladsvytro" target="_blank" rel="noopener">🐙 github.com/bladsvytro</a>
         </div>
         <div class="hero__actions" style="justify-content:center;margin-top:1.8rem">
-          <a class="btn btn--primary" href="resume.html">Открыть резюме</a>
+          <a class="btn btn--primary" href="https://t.me/Blads_VYTro" target="_blank" rel="noopener">✈️ Написать в Telegram</a>
+          <a class="btn btn--ghost" href="resume.html">Открыть резюме</a>
           <a class="btn btn--ghost" href="assets/resume-naumov.pdf" download>Скачать PDF</a>
         </div>
       </div>
@@ -410,5 +408,12 @@
       <p>Сделано вручную на HTML/CSS/JS · <a href="#top">наверх ↑</a></p>
     </div>
   </footer>
+
+  <!-- Лайтбокс для скриншотов -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Закрыть">✕</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

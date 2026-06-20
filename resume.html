@@ -24,7 +24,7 @@
     .sheet{max-width:900px;margin:16px auto 48px;background:#fff;border-radius:14px;overflow:hidden;
            box-shadow:0 16px 50px rgba(16,24,38,.14);display:grid;grid-template-columns:300px 1fr}
     /* ===== Sidebar ===== */
-    .side{background:var(--sidebar);color:#dce6f0;padding:32px 26px;display:flex;flex-direction:column;gap:24px}
+    .side{background:var(--sidebar);color:#dce6f0;padding:26px 22px;display:flex;flex-direction:column;gap:17px}
     .avatar{width:150px;height:150px;border-radius:18px;object-fit:cover;margin:0 auto;border:3px solid rgba(255,255,255,.12);
             background:linear-gradient(135deg,#0a84c2,#7c5cff);display:block}
     .avatar-fallback{width:150px;height:150px;border-radius:18px;margin:0 auto;display:grid;place-items:center;
@@ -40,20 +40,26 @@
     .lang-row b{color:#fff;font-weight:600}
 
     /* ===== Main ===== */
-    .main{padding:34px 38px 40px}
-    .name{font-size:30px;font-weight:800;letter-spacing:-.01em}
-    .role{font-size:17px;color:var(--accent);font-weight:600;margin-top:3px}
-    .section{margin-top:24px}
+    .main{padding:26px 32px 28px}
+    .name{font-size:26px;font-weight:800;letter-spacing:-.01em}
+    .role{font-size:16px;color:var(--accent);font-weight:600;margin-top:3px}
+    .fmt{color:var(--muted);font-size:13.5px;margin-top:3px}
+    .section{margin-top:17px}
+    .edu-row{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line);font-size:13.8px}
+    .edu-row:last-child{border-bottom:0}
+    .edu-row b{font-weight:700}
+    .edu-row .sub{display:block;color:var(--faint);font-size:12px}
+    .edu-row .yr{color:var(--accent-2);font-weight:700;font-size:12.5px;white-space:nowrap}
     .section h2{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-2);
                 border-bottom:2px solid var(--line);padding-bottom:7px;margin-bottom:13px}
-    .lead{color:var(--muted);font-size:14.5px}
-    .exp{margin-bottom:16px;position:relative;padding-left:18px}
+    .lead{color:var(--muted);font-size:13.6px}
+    .exp{margin-bottom:11px;position:relative;padding-left:18px}
     .exp::before{content:"";position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
     .exp .top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;align-items:baseline}
     .exp h3{font-size:15.5px;font-weight:700}
     .exp .stack{color:var(--accent-2);font-size:12.5px;font-weight:600}
     .exp ul{margin:6px 0 0;padding-left:18px}
-    .exp li{color:var(--muted);font-size:13.6px;margin-bottom:3px}
+    .exp li{color:var(--muted);font-size:13px;margin-bottom:2px;line-height:1.42}
     .exp a{color:var(--accent);text-decoration:none;font-size:12.6px}
     .edu p{color:var(--muted);font-size:14px}
     .edit{color:var(--faint);font-size:12.5px}
@@ -76,7 +82,7 @@
   <div class="sheet">
     <!-- Sidebar -->
     <aside class="side">
-      <img class="avatar" src="assets/img/avatar.jpg" alt="Владислав Наумов"
+      <img class="avatar" src="assets/img/avatar.webp" alt="Владислав Наумов"
            onerror="this.outerHTML='&lt;div class=\'avatar-fallback\'&gt;ВН&lt;/div&gt;'" />
       <div>
         <h3>Контакты</h3>
@@ -106,7 +112,8 @@
     <!-- Main -->
     <main class="main">
       <div class="name">Наумов Владислав Владиславович</div>
-      <div class="role">Backend-разработчик · Go</div>
+      <div class="role">Golang Backend-разработчик</div>
+      <div class="fmt">Удалённая работа · готов приступить сразу</div>
 
       <div class="section">
         <h2>О себе</h2>
@@ -166,18 +173,9 @@
 
       <div class="section edu">
         <h2>Образование</h2>
-        <div class="exp">
-          <div class="top"><h3>НовГУ им. Ярослава Мудрого</h3><span class="stack">неоконченное высшее</span></div>
-          <ul><li>Прикладная математика и информатика.</li></ul>
-        </div>
-        <div class="exp">
-          <div class="top"><h3>Школа 21 (Сбер)</h3><span class="stack">интенсив</span></div>
-          <ul><li>Пройден отбор на интенсив по программированию (peer-to-peer обучение).</li></ul>
-        </div>
-        <div class="exp">
-          <div class="top"><h3>Академия TOP</h3><span class="stack">курсы</span></div>
-          <ul><li>Курсы программирования и разработки.</li></ul>
-        </div>
+        <div class="edu-row"><div><b>НовГУ им. Ярослава Мудрого</b> — Прикладная математика и информатика<span class="sub">неоконченное высшее</span></div><span class="yr">2023–2026</span></div>
+        <div class="edu-row"><div><b>Школа 21 (Сбер)</b> — интенсив по программированию, пройден отбор<span class="sub">peer-to-peer обучение</span></div><span class="yr">2025</span></div>
+        <div class="edu-row"><div><b>Академия TOP</b> — курсы программирования и разработки<span class="sub"></span></div><span class="yr">2021–2023</span></div>
       </div>
     </main>
   </div>

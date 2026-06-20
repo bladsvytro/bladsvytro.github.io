@@ -48,6 +48,50 @@ if (typed && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
   tick();
 } else if (typed) { typed.textContent = "gRPC · Kafka · Redis · Docker"; }
 
+/* Прогресс-бар чтения + подсветка активного пункта меню */
+const progress = document.getElementById("progress");
+const sections = [...document.querySelectorAll("main section[id]")];
+const navLinks = [...document.querySelectorAll('.nav__menu a[href^="#"]')];
+function onScroll() {
+  const h = document.documentElement;
+  const max = h.scrollHeight - h.clientHeight;
+  if (progress) progress.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + "%";
+  const y = h.scrollTop + 120;
+  let current = "";
+  for (const s of sections) if (s.offsetTop <= y) current = s.id;
+  navLinks.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + current));
+}
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
+
+/* Лайтбокс для скриншотов */
+const lb = document.getElementById("lightbox");
+const lbImg = document.getElementById("lightbox-img");
+if (lb && lbImg) {
+  const open = (src, alt) => { lbImg.src = src; lbImg.alt = alt || ""; lb.classList.add("is-open"); lb.setAttribute("aria-hidden", "false"); };
+  const close = () => { lb.classList.remove("is-open"); lb.setAttribute("aria-hidden", "true"); lbImg.src = ""; };
+  document.querySelectorAll(".card__media img.shot, .collage .desk").forEach((img) => {
+    img.addEventListener("click", () => open(img.currentSrc || img.src, img.alt));
+  });
+  lb.addEventListener("click", (e) => { if (e.target !== lbImg) close(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+}
+
+/* Копирование email + тост */
+const toast = document.getElementById("toast");
+function showToast(msg) {
+  if (!toast) return;
+  toast.textContent = msg; toast.classList.add("is-show");
+  clearTimeout(showToast._t); showToast._t = setTimeout(() => toast.classList.remove("is-show"), 2000);
+}
+document.querySelectorAll("[data-copy]").forEach((btn) => {
+  btn.addEventListener("click", async () => {
+    const text = btn.dataset.copy;
+    try { await navigator.clipboard.writeText(text); showToast("Скопировано: " + text); }
+    catch { window.location.href = "mailto:" + text; }
+  });
+});
+
 /* Reveal */
 const reveals = document.querySelectorAll("[data-reveal]");
 if (reveals.length && "IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
