@@ -147,6 +147,9 @@ h1,h2,h3{font-family:var(--font-display);line-height:1.1;font-weight:700;letter-
 [data-reveal].is-visible{opacity:1;transform:none}
 .is-hidden{display:none!important}
 
+/* SVG icons */
+.ic{width:1.05em;height:1.05em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-.15em}
+
 /* Reading progress bar */
 .progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:calc(var(--z-header) + 1);background:var(--grad);transition:width .1s linear}
 /* Active nav link */

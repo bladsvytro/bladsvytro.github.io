@@ -42,6 +42,23 @@
   <a class="skip-link" href="#projects">Перейти к проектам</a>
   <div class="progress" id="progress" aria-hidden="true"></div>
 
+  <!-- SVG-иконки (спрайт) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+      <symbol id="i-tg" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+      <symbol id="i-ext" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+      <symbol id="i-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></symbol>
+      <symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><line x1="6" y1="7" x2="6.01" y2="7"/><line x1="6" y1="17" x2="6.01" y2="17"/></symbol>
+    </defs>
+  </svg>
+
   <header class="site-header" id="top">
     <div class="container site-header__inner">
       <a class="logo" href="#top" aria-label="На главную">
@@ -58,7 +75,7 @@
           <li><a href="#contact">Контакты</a></li>
         </ul>
       </nav>
-      <a class="btn btn--ghost btn--sm" href="resume.html">📄 Резюме</a>
+      <a class="btn btn--ghost btn--sm" href="resume.html"><svg class="ic"><use href="#i-file"/></svg> Резюме</a>
     </div>
   </header>
 
@@ -79,14 +96,14 @@
             фриланс-лендинги под ключ и Telegram-боты. Открыт к новым проектам и интересным задачам.</p>
           <div class="hero__actions">
             <a class="btn btn--primary" href="#projects">Смотреть проекты</a>
-            <a class="btn btn--ghost" href="assets/resume-naumov.pdf" download>Скачать резюме (PDF)</a>
+            <a class="btn btn--ghost" href="assets/resume-naumov.pdf" download><svg class="ic"><use href="#i-download"/></svg> Скачать резюме (PDF)</a>
           </div>
           <div class="hero__contacts">
-            <a class="chip" href="https://github.com/bladsvytro" target="_blank" rel="noopener">🐙 GitHub</a>
-            <a class="chip" href="https://t.me/Blads_VYTro" target="_blank" rel="noopener">✈️ @Blads_VYTro</a>
-            <a class="chip" href="mailto:blads.vytro@gmail.com">✉️ Email</a>
-            <a class="chip" href="tel:+79116141760">📞 +7 911 614-17-60</a>
-            <span class="chip">📍 Великий Новгород</span>
+            <a class="chip" href="https://github.com/bladsvytro" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> GitHub</a>
+            <a class="chip" href="https://t.me/Blads_VYTro" target="_blank" rel="noopener"><svg class="ic"><use href="#i-tg"/></svg> @Blads_VYTro</a>
+            <a class="chip" href="mailto:blads.vytro@gmail.com"><svg class="ic"><use href="#i-mail"/></svg> Email</a>
+            <a class="chip" href="tel:+79116141760"><svg class="ic"><use href="#i-phone"/></svg> +7 911 614-17-60</a>
+            <span class="chip"><svg class="ic"><use href="#i-pin"/></svg> Великий Новгород</span>
           </div>
         </div>
         <div data-reveal>
@@ -122,7 +139,7 @@
             рабочего, задеплоенного состояния.</p>
         </div>
         <div class="stats" data-reveal>
-          <div class="stat"><b>15</b><span>проектов в портфолио</span></div>
+          <div class="stat"><b>16</b><span>проектов в портфолио</span></div>
           <div class="stat"><b>Go · C · Py</b><span>основные языки</span></div>
           <div class="stat"><b>10/10</b><span>проектов задеплоено</span></div>
           <div class="stat"><b>Open</b><span>к работе и заказам</span></div>
@@ -175,13 +192,27 @@
 
           <!-- ===== Backend / pet projects ===== -->
           <article class="card" data-cat="backend">
+            <div class="card__media" style="display:grid;place-items:center;background:radial-gradient(120% 120% at 30% 20%,#10384a,#15102a)">
+              <svg class="ic" style="width:3.2rem;height:3.2rem;color:var(--go-2);stroke-width:1.6"><use href="#i-server"/></svg>
+              <span class="card__badge">DevOps · команда</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">YOLO_commander</h3>
+              <p class="card__desc">Командный проект, роль <b>DevOps</b>: настройка CI/CD, контейнеризация
+                (Docker / Compose), сборка и деплой, конфигурация окружений и автоматизация.</p>
+              <div class="card__tags"><span class="tag">DevOps</span><span class="tag">CI/CD</span><span class="tag">Docker</span><span class="tag">Linux</span><span class="tag">Bash</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://gitverse.ru/3311yolo_organization/YOLO_commander" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg> GitVerse</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="backend">
             <div class="card__media"><img class="shot" src="assets/img/messenger.webp" alt="Мессенджер BLADS — интерфейс" loading="lazy" /><span class="card__badge">Go · TypeScript</span></div>
             <div class="card__body">
               <h3 class="card__title">BLADS — мессенджер реального времени</h3>
               <p class="card__desc">Полноценный мессенджер: бэкенд-сервисы на Go, фронтенд на TypeScript,
                 обмен сообщениями в реальном времени, PostgreSQL и контейнеризация.</p>
               <div class="card__tags"><span class="tag">Go</span><span class="tag">TypeScript</span><span class="tag">WebSocket</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span></div>
-              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/Blads_massanger" target="_blank" rel="noopener">🐙 Код на GitHub</a></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/Blads_massanger" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Код на GitHub</a></div>
             </div>
           </article>
 
@@ -192,7 +223,7 @@
               <p class="card__desc">Сервис агрегации онлайн-подписок на Gin: CRUD + аналитика, Swagger-документация,
                 валидация (validator.v10), zap-логирование, юнит-тесты, graceful shutdown, Docker.</p>
               <div class="card__tags"><span class="tag">Go</span><span class="tag">Gin</span><span class="tag">Swagger</span><span class="tag">PostgreSQL</span><span class="tag">Тесты</span><span class="tag">Docker</span></div>
-              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/effective-mobile_test" target="_blank" rel="noopener">🐙 Код на GitHub</a></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/effective-mobile_test" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Код на GitHub</a></div>
             </div>
           </article>
 
@@ -203,7 +234,7 @@
               <p class="card__desc">URL-shortener на Go: генерация коротких кодов, редирект, хранение ссылок.
                 Учебный сервис для отработки чистого Go и работы с хранилищем.</p>
               <div class="card__tags"><span class="tag">Go</span><span class="tag">HTTP</span><span class="tag">Хранилище</span></div>
-              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/Shortlink-servise-Go" target="_blank" rel="noopener">🐙 Код на GitHub</a></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/Shortlink-servise-Go" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Код на GitHub</a></div>
             </div>
           </article>
 
@@ -214,7 +245,7 @@
               <p class="card__desc">Системное программирование на C: асинхронный TCP клиент-сервер на сокетах
                 (epoll), сборка через Makefile. Тестовое для NDM.</p>
               <div class="card__tags"><span class="tag">C</span><span class="tag">epoll</span><span class="tag">TCP/IP</span><span class="tag">Sockets</span></div>
-              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/NDM_Test" target="_blank" rel="noopener">🐙 Код на GitHub</a></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/NDM_Test" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Код на GitHub</a></div>
             </div>
           </article>
 
@@ -225,7 +256,7 @@
               <p class="card__desc">Веб-приложение для аренды жилья: бэкенд на Go с HTML-шаблонами,
                 каталог объявлений и страницы объектов.</p>
               <div class="card__tags"><span class="tag">Go</span><span class="tag">HTML</span><span class="tag">Templates</span></div>
-              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/home_Arenda" target="_blank" rel="noopener">🐙 Код на GitHub</a></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/home_Arenda" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Код на GitHub</a></div>
             </div>
           </article>
 
@@ -242,8 +273,8 @@
                 галерея, карта. Адаптив, SEO, деплой на GitHub Pages.</p>
               <div class="card__tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">a11y</span></div>
               <div class="card__links">
-                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/construction-landing/" target="_blank" rel="noopener">Демо ↗</a>
-                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/construction-landing" target="_blank" rel="noopener">🐙</a>
+                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/construction-landing/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg> Демо</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/construction-landing" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a>
               </div>
             </div>
           </article>
@@ -260,8 +291,8 @@
                 Пастельный дизайн, микроинтеракции, отправка в Telegram.</p>
               <div class="card__tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">Telegram API</span></div>
               <div class="card__links">
-                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/nail-studio-landing/" target="_blank" rel="noopener">Демо ↗</a>
-                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/nail-studio-landing" target="_blank" rel="noopener">🐙</a>
+                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/nail-studio-landing/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg> Демо</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/nail-studio-landing" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a>
               </div>
             </div>
           </article>
@@ -278,8 +309,8 @@
                 документы PDF, форма на Web3Forms. Антиква-типографика.</p>
               <div class="card__tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">Web3Forms</span></div>
               <div class="card__links">
-                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/legal-consult-landing/" target="_blank" rel="noopener">Демо ↗</a>
-                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/legal-consult-landing" target="_blank" rel="noopener">🐙</a>
+                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/legal-consult-landing/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg> Демо</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/legal-consult-landing" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a>
               </div>
             </div>
           </article>
@@ -296,8 +327,8 @@
                 ленивый YouTube, форма в Google Sheets. Glassmorphism.</p>
               <div class="card__tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">Apps Script</span></div>
               <div class="card__links">
-                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/english-webinar-landing/" target="_blank" rel="noopener">Демо ↗</a>
-                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/english-webinar-landing" target="_blank" rel="noopener">🐙</a>
+                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/english-webinar-landing/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg> Демо</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/english-webinar-landing" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a>
               </div>
             </div>
           </article>
@@ -314,8 +345,8 @@
                 форма пробной тренировки в Telegram. Крупная типографика Oswald.</p>
               <div class="card__tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">Grid</span></div>
               <div class="card__links">
-                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/fitness-club-landing/" target="_blank" rel="noopener">Демо ↗</a>
-                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/fitness-club-landing" target="_blank" rel="noopener">🐙</a>
+                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/fitness-club-landing/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg> Демо</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/fitness-club-landing" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a>
               </div>
             </div>
           </article>
@@ -328,7 +359,7 @@
               <p class="card__desc">FSM-заявка на замер, калькулятор стоимости на кнопках, уведомление менеджеру,
                 запись в Google Sheets.</p>
               <div class="card__tags"><span class="tag">Python</span><span class="tag">aiogram 3</span><span class="tag">Google Sheets</span></div>
-              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/construction-leadbot" target="_blank" rel="noopener">🐙 Код</a></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/construction-leadbot" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Код</a></div>
             </div>
           </article>
 
@@ -339,7 +370,7 @@
               <p class="card__desc">Запись по слотам в SQLite, напоминание за 2 часа (APScheduler), портфолио по
                 категориям, админ-команды.</p>
               <div class="card__tags"><span class="tag">Python</span><span class="tag">aiogram 3</span><span class="tag">SQLite</span><span class="tag">APScheduler</span></div>
-              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/nail-booking-bot" target="_blank" rel="noopener">🐙 Код</a></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/nail-booking-bot" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Код</a></div>
             </div>
           </article>
 
@@ -350,7 +381,7 @@
               <p class="card__desc">Анкета из 10 вопросов, автооценка по ключевым словам, хранение в SQLite,
                 отчёт по кандидату в чат HR.</p>
               <div class="card__tags"><span class="tag">Python</span><span class="tag">aiogram 3</span><span class="tag">SQLite</span></div>
-              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/hr-screening-bot" target="_blank" rel="noopener">🐙 Код</a></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/hr-screening-bot" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Код</a></div>
             </div>
           </article>
 
@@ -361,7 +392,7 @@
               <p class="card__desc">Трекинг заказа по номеру, FAQ на кнопках, связь с оператором, /myorders по
                 контакту. Redis/webhook опционально.</p>
               <div class="card__tags"><span class="tag">Python</span><span class="tag">aiogram 3</span><span class="tag">Redis</span><span class="tag">Webhook</span></div>
-              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/shop-assistant-bot" target="_blank" rel="noopener">🐙 Код</a></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/shop-assistant-bot" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Код</a></div>
             </div>
           </article>
 
@@ -372,7 +403,7 @@
               <p class="card__desc">Пошаговый сбор данных, генерация HTML-резюме (с защитой от XSS) и PDF через
                 WeasyPrint, хранение в SQLite, редактирование.</p>
               <div class="card__tags"><span class="tag">Python</span><span class="tag">aiogram 3</span><span class="tag">WeasyPrint</span><span class="tag">SQLite</span></div>
-              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/resume-builder-bot" target="_blank" rel="noopener">🐙 Код</a></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/resume-builder-bot" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Код</a></div>
             </div>
           </article>
 
@@ -388,13 +419,13 @@
         <p class="section__subtitle">Напишите в Telegram или на почту — отвечаю быстро. Открыт к работе
           над backend-проектами (Go) и фриланс-заказам.</p>
         <div class="hero__contacts" style="justify-content:center;margin-top:1.6rem">
-          <a class="chip" href="https://t.me/Blads_VYTro" target="_blank" rel="noopener">✈️ @Blads_VYTro</a>
-          <button class="chip" type="button" data-copy="blads.vytro@gmail.com">✉️ blads.vytro@gmail.com <span class="copy-hint">скопировать</span></button>
-          <a class="chip" href="tel:+79116141760">📞 +7 911 614-17-60</a>
-          <a class="chip" href="https://github.com/bladsvytro" target="_blank" rel="noopener">🐙 github.com/bladsvytro</a>
+          <a class="chip" href="https://t.me/Blads_VYTro" target="_blank" rel="noopener"><svg class="ic"><use href="#i-tg"/></svg> @Blads_VYTro</a>
+          <button class="chip" type="button" data-copy="blads.vytro@gmail.com"><svg class="ic"><use href="#i-mail"/></svg> blads.vytro@gmail.com <span class="copy-hint">скопировать</span></button>
+          <a class="chip" href="tel:+79116141760"><svg class="ic"><use href="#i-phone"/></svg> +7 911 614-17-60</a>
+          <a class="chip" href="https://github.com/bladsvytro" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> github.com/bladsvytro</a>
         </div>
         <div class="hero__actions" style="justify-content:center;margin-top:1.8rem">
-          <a class="btn btn--primary" href="https://t.me/Blads_VYTro" target="_blank" rel="noopener">✈️ Написать в Telegram</a>
+          <a class="btn btn--primary" href="https://t.me/Blads_VYTro" target="_blank" rel="noopener"><svg class="ic"><use href="#i-tg"/></svg> Написать в Telegram</a>
           <a class="btn btn--ghost" href="resume.html">Открыть резюме</a>
           <a class="btn btn--ghost" href="assets/resume-naumov.pdf" download>Скачать PDF</a>
         </div>
@@ -405,7 +436,7 @@
   <footer class="site-footer">
     <div class="container site-footer__inner">
       <p>© <span id="year">2026</span> Владислав Наумов · Великий Новгород</p>
-      <p>Сделано вручную на HTML/CSS/JS · <a href="#top">наверх ↑</a></p>
+      <p>Сделано вручную на HTML/CSS/JS · <a href="#top" data-top>наверх <svg class="ic"><use href="#i-up"/></svg></a></p>
     </div>
   </footer>
 

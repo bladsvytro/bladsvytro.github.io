@@ -48,6 +48,14 @@ if (typed && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
   tick();
 } else if (typed) { typed.textContent = "gRPC · Kafka · Redis · Docker"; }
 
+/* Скролл в начало (логотип и кнопка «наверх») — фикс sticky-якоря */
+document.querySelectorAll('[data-top], a[href="#top"]').forEach((el) => {
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  });
+});
+
 /* Прогресс-бар чтения + подсветка активного пункта меню */
 const progress = document.getElementById("progress");
 const sections = [...document.querySelectorAll("main section[id]")];

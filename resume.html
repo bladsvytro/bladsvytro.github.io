@@ -33,6 +33,9 @@
     .side a{color:#dce6f0;text-decoration:none}
     .contact-row{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;margin-bottom:9px;word-break:break-word}
     .contact-row .i{opacity:.8}
+    .ic{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+    .contact-row .ic{color:#7da8c9;margin-top:2px}
+    .toolbar .ic{width:16px;height:16px;vertical-align:-.18em;margin-right:2px}
     .side-chips{display:flex;flex-wrap:wrap;gap:6px}
     .side-chips span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-size:12.5px;
             padding:4px 9px;border-radius:6px;color:#eaf2fa}
@@ -40,26 +43,26 @@
     .lang-row b{color:#fff;font-weight:600}
 
     /* ===== Main ===== */
-    .main{padding:26px 32px 28px}
-    .name{font-size:26px;font-weight:800;letter-spacing:-.01em}
+    .main{padding:18px 30px 14px}
+    .name{font-size:23px;font-weight:800;letter-spacing:-.01em;line-height:1.15}
     .role{font-size:16px;color:var(--accent);font-weight:600;margin-top:3px}
     .fmt{color:var(--muted);font-size:13.5px;margin-top:3px}
-    .section{margin-top:17px}
-    .edu-row{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line);font-size:13.8px}
+    .section{margin-top:11px}
+    .edu-row{display:flex;justify-content:space-between;gap:12px;padding:4px 0;border-bottom:1px solid var(--line);font-size:13.5px}
     .edu-row:last-child{border-bottom:0}
     .edu-row b{font-weight:700}
     .edu-row .sub{display:block;color:var(--faint);font-size:12px}
     .edu-row .yr{color:var(--accent-2);font-weight:700;font-size:12.5px;white-space:nowrap}
     .section h2{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-2);
-                border-bottom:2px solid var(--line);padding-bottom:7px;margin-bottom:13px}
-    .lead{color:var(--muted);font-size:13.6px}
-    .exp{margin-bottom:11px;position:relative;padding-left:18px}
+                border-bottom:2px solid var(--line);padding-bottom:5px;margin-bottom:7px}
+    .lead{color:var(--muted);font-size:13.2px;line-height:1.45}
+    .exp{margin-bottom:8px;position:relative;padding-left:18px}
     .exp::before{content:"";position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
     .exp .top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;align-items:baseline}
     .exp h3{font-size:15.5px;font-weight:700}
     .exp .stack{color:var(--accent-2);font-size:12.5px;font-weight:600}
     .exp ul{margin:6px 0 0;padding-left:18px}
-    .exp li{color:var(--muted);font-size:13px;margin-bottom:2px;line-height:1.42}
+    .exp li{color:var(--muted);font-size:12.8px;margin-bottom:2px;line-height:1.36}
     .exp a{color:var(--accent);text-decoration:none;font-size:12.6px}
     .edu p{color:var(--muted);font-size:14px}
     .edit{color:var(--faint);font-size:12.5px}
@@ -74,9 +77,19 @@
   </style>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <symbol id="ri-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="ri-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="ri-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></symbol>
+    <symbol id="ri-tg" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+    <symbol id="ri-gh" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+    <symbol id="ri-web" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="ri-dl" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+  </defs></svg>
+
   <div class="toolbar">
     <a class="back" href="index.html">← В портфолио</a>
-    <a class="print" onclick="window.print();return false;">🖨 Скачать PDF</a>
+    <a class="print" onclick="window.print();return false;"><svg class="ic"><use href="#ri-dl"/></svg> Скачать PDF</a>
   </div>
 
   <div class="sheet">
@@ -86,20 +99,21 @@
            onerror="this.outerHTML='&lt;div class=\'avatar-fallback\'&gt;ВН&lt;/div&gt;'" />
       <div>
         <h3>Контакты</h3>
-        <div class="contact-row"><span class="i">📍</span><span>Великий Новгород</span></div>
-        <div class="contact-row"><span class="i">📞</span><a href="tel:+79116141760">+7 911 614-17-60</a></div>
-        <div class="contact-row"><span class="i">✉️</span><a href="mailto:blads.vytro@gmail.com">blads.vytro@gmail.com</a></div>
-        <div class="contact-row"><span class="i">✈️</span><a href="https://t.me/Blads_VYTro">@Blads_VYTro</a></div>
-        <div class="contact-row"><span class="i">🐙</span><a href="https://github.com/bladsvytro">github.com/bladsvytro</a></div>
-        <div class="contact-row"><span class="i">🌐</span><a href="https://bladsvytro.github.io">bladsvytro.github.io</a></div>
+        <div class="contact-row"><svg class="ic"><use href="#ri-pin"/></svg><span>Великий Новгород</span></div>
+        <div class="contact-row"><svg class="ic"><use href="#ri-phone"/></svg><a href="tel:+79116141760">+7 911 614-17-60</a></div>
+        <div class="contact-row"><svg class="ic"><use href="#ri-mail"/></svg><a href="mailto:blads.vytro@gmail.com">blads.vytro@gmail.com</a></div>
+        <div class="contact-row"><svg class="ic"><use href="#ri-tg"/></svg><a href="https://t.me/Blads_VYTro">@Blads_VYTro</a></div>
+        <div class="contact-row"><svg class="ic"><use href="#ri-gh"/></svg><a href="https://github.com/bladsvytro">github.com/bladsvytro</a></div>
+        <div class="contact-row"><svg class="ic"><use href="#ri-web"/></svg><a href="https://bladsvytro.github.io">bladsvytro.github.io</a></div>
       </div>
       <div>
         <h3>Ключевые навыки</h3>
         <div class="side-chips">
-          <span>Go</span><span>gRPC</span><span>REST</span><span>PostgreSQL</span><span>MySQL</span>
-          <span>Redis</span><span>Kafka</span><span>Docker</span><span>Compose</span><span>GitLab CI</span>
-          <span>Linux</span><span>Git</span><span>TCP/IP</span><span>C / C++</span><span>Python</span>
-          <span>NumPy</span><span>ООП</span><span>Архитектура</span>
+          <span>Go</span><span>gRPC</span><span>REST</span><span>WebSocket</span>
+          <span>PostgreSQL</span><span>MySQL</span><span>Redis</span><span>Kafka</span>
+          <span>Docker</span><span>Compose</span><span>CI/CD</span><span>GitLab CI</span>
+          <span>Linux</span><span>Bash</span><span>Git</span><span>TCP/IP</span>
+          <span>C / C++</span><span>Python</span><span>ООП</span><span>Чистая архитектура</span>
         </div>
       </div>
       <div>
@@ -117,9 +131,8 @@
 
       <div class="section">
         <h2>О себе</h2>
-        <p class="lead">Backend-разработчик с фокусом на <b>Go</b>. Проектирую и собираю сервисы: REST и gRPC API,
-          работа с PostgreSQL/MySQL, Redis, Kafka, контейнеризация в Docker. Уверенно владею системным
-          программированием на C (сокеты, epoll), использую Python. Довожу проекты до рабочего задеплоенного
+        <p class="lead">Backend-разработчик с фокусом на <b>Go</b>: REST и gRPC API, PostgreSQL/MySQL, Redis, Kafka,
+          Docker. Знаю системное программирование на C (epoll) и Python. Довожу проекты до задеплоенного
           состояния — от архитектуры до CI и деплоя.</p>
       </div>
 
@@ -127,47 +140,33 @@
         <h2>Опыт и проекты</h2>
 
         <div class="exp">
+          <div class="top"><h3>YOLO_commander — DevOps-инженер</h3><span class="stack">CI/CD · Docker · Linux · Bash</span></div>
+          <ul><li>Командный проект: CI/CD-пайплайны, контейнеризация (Docker/Compose), деплой и конфигурация окружений, автоматизация. <a href="https://gitverse.ru/3311yolo_organization/YOLO_commander">gitverse.ru/…/YOLO_commander</a></li></ul>
+        </div>
+
+        <div class="exp">
           <div class="top"><h3>Мессенджер реального времени</h3><span class="stack">Go · TypeScript · WebSocket · PostgreSQL · Docker</span></div>
-          <ul>
-            <li>Бэкенд на Go: REST + WebSocket, обмен сообщениями в реальном времени, профили и серверы.</li>
-            <li>Фронтенд на TypeScript; хранение в PostgreSQL; контейнеризация и многосервисная сборка.</li>
-            <li><a href="https://github.com/bladsvytro/Blads_massanger">github.com/bladsvytro/Blads_massanger</a></li>
-          </ul>
+          <ul><li>Бэкенд на Go (REST + WebSocket, реалтайм), фронтенд на TypeScript, PostgreSQL, контейнеризация.</li></ul>
         </div>
 
         <div class="exp">
           <div class="top"><h3>REST-сервис (тестовое Effective Mobile)</h3><span class="stack">Go · REST · PostgreSQL · Docker · Makefile</span></div>
-          <ul>
-            <li>REST API на Go со слоистой архитектурой, миграциями БД и валидацией.</li>
-            <li>Запуск через Docker, автоматизация задач Makefile.</li>
-            <li><a href="https://github.com/bladsvytro/effective-mobile_test">github.com/bladsvytro/effective-mobile_test</a></li>
-          </ul>
+          <ul><li>REST API на Gin: слоистая архитектура, миграции, Swagger, validator.v10, zap, юнит-тесты, graceful shutdown, Docker.</li></ul>
         </div>
 
         <div class="exp">
           <div class="top"><h3>Асинхронный клиент-сервер</h3><span class="stack">C · epoll · TCP/IP · сокеты</span></div>
-          <ul>
-            <li>Неблокирующий TCP клиент-сервер на C с мультиплексированием через epoll.</li>
-            <li>Системное программирование, ручная сборка через Makefile (тестовое NDM).</li>
-            <li><a href="https://github.com/bladsvytro/NDM_Test">github.com/bladsvytro/NDM_Test</a></li>
-          </ul>
+          <ul><li>Неблокирующий TCP клиент-сервер на C с мультиплексированием через epoll; сборка Makefile (тестовое NDM).</li></ul>
         </div>
 
         <div class="exp">
           <div class="top"><h3>Сервис сокращения ссылок · Сайт аренды жилья</h3><span class="stack">Go · HTTP · HTML-шаблоны</span></div>
-          <ul>
-            <li>URL-shortener на Go (генерация кодов, редиректы, хранилище).</li>
-            <li>Веб-приложение аренды жилья: бэкенд на Go + HTML-шаблоны, каталог объявлений.</li>
-          </ul>
+          <ul><li>URL-shortener на Go и веб-приложение аренды жилья (Go + HTML-шаблоны, каталог объявлений).</li></ul>
         </div>
 
         <div class="exp">
           <div class="top"><h3>Фриланс: лендинги и Telegram-боты</h3><span class="stack">HTML/CSS/JS · Python (aiogram 3) · SQLite · Docker</span></div>
-          <ul>
-            <li>5 адаптивных лендингов «под ключ» с деплоем на GitHub Pages (формы, калькуляторы, SEO).</li>
-            <li>5 ботов на aiogram 3: FSM, SQLite, APScheduler, интеграции (Google Sheets, Web3Forms).</li>
-            <li>Витрина: <a href="https://bladsvytro.github.io/">bladsvytro.github.io</a></li>
-          </ul>
+          <ul><li>5 адаптивных лендингов (деплой на GitHub Pages) и 5 ботов на aiogram 3 (FSM, SQLite, APScheduler, интеграции). Витрина: <a href="https://bladsvytro.github.io/">bladsvytro.github.io</a></li></ul>
         </div>
       </div>
 
