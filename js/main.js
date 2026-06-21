@@ -48,6 +48,20 @@ if (typed && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
   tick();
 } else if (typed) { typed.textContent = "gRPC · Kafka · Redis · Docker"; }
 
+/* Parallax-наклон код-карточки за курсором (только мышь, без reduce-motion) */
+const codecard = document.querySelector(".codecard");
+if (codecard && matchMedia("(hover: hover) and (pointer: fine)").matches
+    && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const MAX = 7; // градусов
+  codecard.addEventListener("mousemove", (e) => {
+    const r = codecard.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width - 0.5;
+    const py = (e.clientY - r.top) / r.height - 0.5;
+    codecard.style.transform = `rotateY(${px * MAX}deg) rotateX(${-py * MAX}deg)`;
+  });
+  codecard.addEventListener("mouseleave", () => { codecard.style.transform = ""; });
+}
+
 /* Скролл в начало (логотип и кнопка «наверх») — фикс sticky-якоря */
 document.querySelectorAll('[data-top], a[href="#top"]').forEach((el) => {
   el.addEventListener("click", (e) => {
