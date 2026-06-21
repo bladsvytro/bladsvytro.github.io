@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Резюме — Наумов Владислав Владиславович | Backend-разработчик (Go)</title>
-  <meta name="description" content="Резюме: Наумов Владислав Владиславович — backend-разработчик на Go. Великий Новгород." />
+  <title>Resume — Vladislav Naumov | Backend Developer (Go)</title>
+  <meta name="description" content="Resume: Vladislav Naumov — Go backend developer. Veliky Novgorod." />
+  <link rel="alternate" hreflang="ru" href="https://bladsvytro.github.io/resume.html" />
+  <link rel="alternate" hreflang="en" href="https://bladsvytro.github.io/en/resume.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" />
@@ -23,7 +25,6 @@
 
     .sheet{max-width:900px;margin:16px auto 48px;background:#fff;border-radius:14px;overflow:hidden;
            box-shadow:0 16px 50px rgba(16,24,38,.14);display:grid;grid-template-columns:300px 1fr}
-    /* ===== Sidebar ===== */
     .side{background:var(--sidebar);color:#dce6f0;padding:26px 22px;display:flex;flex-direction:column;gap:17px}
     .avatar{width:150px;height:150px;border-radius:18px;object-fit:cover;margin:0 auto;border:3px solid rgba(255,255,255,.12);
             background:linear-gradient(135deg,#0a84c2,#7c5cff);display:block}
@@ -42,7 +43,6 @@
     .lang-row{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:6px;color:#cdd9e6}
     .lang-row b{color:#fff;font-weight:600}
 
-    /* ===== Main ===== */
     .main{padding:18px 30px 14px}
     .name{font-size:23px;font-weight:800;letter-spacing:-.01em;line-height:1.15}
     .role{font-size:16px;color:var(--accent);font-weight:600;margin-top:3px}
@@ -65,7 +65,6 @@
     .exp li{color:var(--muted);font-size:12.8px;margin-bottom:2px;line-height:1.36}
     .exp a{color:var(--accent);text-decoration:none;font-size:12.6px}
     .edu p{color:var(--muted);font-size:14px}
-    .edit{color:var(--faint);font-size:12.5px}
 
     @media (max-width:720px){ .sheet{grid-template-columns:1fr} }
     @media print{
@@ -88,19 +87,18 @@
   </defs></svg>
 
   <div class="toolbar">
-    <a class="back" href="en/resume.html" hreflang="en">EN</a>
-    <a class="back" href="index.html">← В портфолио</a>
-    <a class="print" onclick="window.print();return false;"><svg class="ic"><use href="#ri-dl"/></svg> Скачать PDF</a>
+    <a class="back" href="../resume.html" hreflang="ru">RU</a>
+    <a class="back" href="index.html">← Portfolio</a>
+    <a class="print" onclick="window.print();return false;"><svg class="ic"><use href="#ri-dl"/></svg> Download PDF</a>
   </div>
 
   <div class="sheet">
-    <!-- Sidebar -->
     <aside class="side">
-      <img class="avatar" src="assets/img/avatar.webp" alt="Владислав Наумов"
-           onerror="this.outerHTML='&lt;div class=\'avatar-fallback\'&gt;ВН&lt;/div&gt;'" />
+      <img class="avatar" src="../assets/img/avatar.webp" alt="Vladislav Naumov"
+           onerror="this.outerHTML='&lt;div class=\'avatar-fallback\'&gt;VN&lt;/div&gt;'" />
       <div>
-        <h3>Контакты</h3>
-        <div class="contact-row"><svg class="ic"><use href="#ri-pin"/></svg><span>Великий Новгород</span></div>
+        <h3>Contact</h3>
+        <div class="contact-row"><svg class="ic"><use href="#ri-pin"/></svg><span>Veliky Novgorod, Russia</span></div>
         <div class="contact-row"><svg class="ic"><use href="#ri-phone"/></svg><a href="tel:+79116141760">+7 911 614-17-60</a></div>
         <div class="contact-row"><svg class="ic"><use href="#ri-mail"/></svg><a href="mailto:blads.vytro@gmail.com">blads.vytro@gmail.com</a></div>
         <div class="contact-row"><svg class="ic"><use href="#ri-tg"/></svg><a href="https://t.me/Blads_VYTro">@Blads_VYTro</a></div>
@@ -108,74 +106,73 @@
         <div class="contact-row"><svg class="ic"><use href="#ri-web"/></svg><a href="https://bladsvytro.github.io">bladsvytro.github.io</a></div>
       </div>
       <div>
-        <h3>Ключевые навыки</h3>
+        <h3>Key skills</h3>
         <div class="side-chips">
           <span>Go</span><span>gRPC</span><span>REST</span><span>WebSocket</span>
           <span>PostgreSQL</span><span>MySQL</span><span>Redis</span><span>Kafka</span>
           <span>Docker</span><span>Compose</span><span>CI/CD</span><span>GitLab CI</span>
           <span>Linux</span><span>Bash</span><span>Git</span><span>TCP/IP</span>
-          <span>C / C++</span><span>Python</span><span>ООП</span><span>Чистая архитектура</span>
+          <span>C / C++</span><span>Python</span><span>OOP</span><span>Clean architecture</span>
         </div>
       </div>
       <div>
-        <h3>Языки</h3>
-        <div class="lang-row"><span>Русский</span><b>родной</b></div>
-        <div class="lang-row"><span>Английский</span><b>чтение документации</b></div>
+        <h3>Languages</h3>
+        <div class="lang-row"><span>Russian</span><b>native</b></div>
+        <div class="lang-row"><span>English</span><b>technical reading</b></div>
       </div>
     </aside>
 
-    <!-- Main -->
     <main class="main">
-      <div class="name">Наумов Владислав Владиславович</div>
-      <div class="role">Golang Backend-разработчик</div>
-      <div class="fmt">Удалённая работа · готов приступить сразу</div>
+      <div class="name">Vladislav Naumov</div>
+      <div class="role">Golang Backend Developer</div>
+      <div class="fmt">Remote · available immediately</div>
 
       <div class="section">
-        <h2>О себе</h2>
-        <p class="lead">Backend-разработчик с фокусом на <b>Go</b>: REST и gRPC API, PostgreSQL/MySQL, Redis, Kafka,
-          Docker. Знаю системное программирование на C (epoll) и Python. Довожу проекты до задеплоенного
-          состояния — от архитектуры до CI и деплоя.</p>
+        <h2>Summary</h2>
+        <p class="lead">Backend developer focused on <b>Go</b>: REST and gRPC APIs, PostgreSQL/MySQL, Redis, Kafka,
+          Docker. Comfortable with systems programming in C (epoll) and Python. I take projects all the way to a
+          deployed state — from architecture to CI and delivery.</p>
       </div>
 
       <div class="section">
-        <h2>Опыт и проекты</h2>
+        <h2>Experience &amp; projects</h2>
 
         <div class="exp">
-          <div class="top"><h3>YOLO_commander — DevOps-инженер</h3><span class="stack">CI/CD · Docker · Linux · Bash</span></div>
-          <ul><li>Командный проект: CI/CD-пайплайны, контейнеризация (Docker/Compose), деплой и конфигурация окружений, автоматизация. <a href="https://gitverse.ru/3311yolo_organization/YOLO_commander">gitverse.ru/…/YOLO_commander</a></li></ul>
+          <div class="top"><h3>YOLO_commander — DevOps engineer</h3><span class="stack">CI/CD · Docker · Linux · Bash</span></div>
+          <ul><li>Team project: CI/CD pipelines, containerisation (Docker/Compose), deploys and environment configuration, automation. <a href="https://gitverse.ru/3311yolo_organization/YOLO_commander">gitverse.ru/…/YOLO_commander</a></li></ul>
         </div>
 
         <div class="exp">
-          <div class="top"><h3>Мессенджер (BLADS)</h3><span class="stack">Go · TypeScript · WebSocket · PostgreSQL · Docker</span></div>
-          <ul><li>Бэкенд на Go (REST + WebSocket, реалтайм), фронтенд на TypeScript, PostgreSQL, контейнеризация.</li></ul>
+          <div class="top"><h3>Messenger (BLADS)</h3><span class="stack">Go · TypeScript · WebSocket · PostgreSQL · Docker</span></div>
+          <ul><li>Go backend (REST + WebSocket, real-time), TypeScript frontend, PostgreSQL, containerisation.</li></ul>
         </div>
 
         <div class="exp">
-          <div class="top"><h3>REST-сервис (тестовое Effective Mobile)</h3><span class="stack">Go · REST · PostgreSQL · Docker · Makefile</span></div>
-          <ul><li>REST API на Gin: слоистая архитектура, миграции, Swagger, validator.v10, zap, юнит-тесты, graceful shutdown, Docker.</li></ul>
+          <div class="top"><h3>REST service (Effective Mobile test task)</h3><span class="stack">Go · REST · PostgreSQL · Docker · Makefile</span></div>
+          <ul><li>REST API on Gin: layered architecture, migrations, Swagger, validator.v10, zap, unit tests, graceful shutdown, Docker.</li></ul>
         </div>
 
         <div class="exp">
-          <div class="top"><h3>Асинхронный клиент-сервер</h3><span class="stack">C · epoll · TCP/IP · сокеты</span></div>
-          <ul><li>Неблокирующий TCP клиент-сервер на C с мультиплексированием через epoll; сборка Makefile (тестовое NDM).</li></ul>
+          <div class="top"><h3>Async client-server</h3><span class="stack">C · epoll · TCP/IP · sockets</span></div>
+          <ul><li>Non-blocking TCP client-server in C with epoll multiplexing; Makefile build (NDM test task).</li></ul>
         </div>
 
         <div class="exp">
-          <div class="top"><h3>Сервис сокращения ссылок · Сайт аренды жилья</h3><span class="stack">Go · HTTP · HTML-шаблоны</span></div>
-          <ul><li>URL-shortener на Go и веб-приложение аренды жилья (Go + HTML-шаблоны, каталог объявлений).</li></ul>
+          <div class="top"><h3>URL shortener · Home-rental website</h3><span class="stack">Go · HTTP · HTML templates</span></div>
+          <ul><li>URL shortener in Go and a home-rental web app (Go + HTML templates, listings catalog).</li></ul>
         </div>
 
         <div class="exp">
-          <div class="top"><h3>Фриланс: лендинги и Telegram-боты</h3><span class="stack">HTML/CSS/JS · Python (aiogram 3) · SQLite · Docker</span></div>
-          <ul><li>5 адаптивных лендингов (деплой на GitHub Pages) и 5 ботов на aiogram 3 (FSM, SQLite, APScheduler, интеграции). Витрина: <a href="https://bladsvytro.github.io/">bladsvytro.github.io</a></li></ul>
+          <div class="top"><h3>Freelance: landings &amp; Telegram bots</h3><span class="stack">HTML/CSS/JS · Python (aiogram 3) · SQLite · Docker</span></div>
+          <ul><li>5 responsive landings (deployed on GitHub Pages) and 5 aiogram-3 bots (FSM, SQLite, APScheduler, integrations). Showcase: <a href="https://bladsvytro.github.io/en/">bladsvytro.github.io/en</a></li></ul>
         </div>
       </div>
 
       <div class="section edu">
-        <h2>Образование</h2>
-        <div class="edu-row"><div><b>НовГУ им. Ярослава Мудрого</b> — Прикладная математика и информатика<span class="sub">неоконченное высшее</span></div><span class="yr">2023–2026</span></div>
-        <div class="edu-row"><div><b>Школа 21 (Сбер)</b> — интенсив по программированию, пройден отбор<span class="sub">peer-to-peer обучение</span></div><span class="yr">2025</span></div>
-        <div class="edu-row"><div><b>Академия TOP</b> — курсы программирования и разработки<span class="sub"></span></div><span class="yr">2021–2023</span></div>
+        <h2>Education</h2>
+        <div class="edu-row"><div><b>Yaroslav-the-Wise Novgorod State University</b> — Applied Mathematics &amp; Computer Science<span class="sub">unfinished higher education</span></div><span class="yr">2023–2026</span></div>
+        <div class="edu-row"><div><b>School 21 (Sber)</b> — programming intensive, selection passed<span class="sub">peer-to-peer learning</span></div><span class="yr">2025</span></div>
+        <div class="edu-row"><div><b>Academy TOP</b> — programming &amp; development courses<span class="sub"></span></div><span class="yr">2021–2023</span></div>
       </div>
     </main>
   </div>

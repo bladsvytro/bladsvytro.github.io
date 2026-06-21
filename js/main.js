@@ -35,7 +35,10 @@ filters.forEach((btn) => {
 /* Типизатор стека в hero (изюминка) */
 const typed = document.getElementById("typed");
 if (typed && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const words = ["gRPC-сервисы", "Kafka и Redis", "PostgreSQL", "Docker · Linux", "распределённые системы"];
+  const isEN = document.documentElement.lang === "en";
+  const words = isEN
+    ? ["gRPC services", "Kafka & Redis", "PostgreSQL", "Docker · Linux", "distributed systems"]
+    : ["gRPC-сервисы", "Kafka и Redis", "PostgreSQL", "Docker · Linux", "распределённые системы"];
   let wi = 0, ci = 0, deleting = false;
   const tick = () => {
     const w = words[wi];
@@ -109,7 +112,8 @@ function showToast(msg) {
 document.querySelectorAll("[data-copy]").forEach((btn) => {
   btn.addEventListener("click", async () => {
     const text = btn.dataset.copy;
-    try { await navigator.clipboard.writeText(text); showToast("Скопировано: " + text); }
+    const okMsg = document.documentElement.lang === "en" ? "Copied: " : "Скопировано: ";
+    try { await navigator.clipboard.writeText(text); showToast(okMsg + text); }
     catch { window.location.href = "mailto:" + text; }
   });
 });

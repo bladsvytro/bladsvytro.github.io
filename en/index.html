@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vladislav Naumov — Backend Developer (Go) | Portfolio</title>
+  <meta name="description" content="Portfolio of Vladislav Naumov: Go backend developer. Pet projects (real-time messenger, REST, gRPC, services in Go and C), freelance landings and Telegram bots. Resume and contacts." />
+  <meta name="theme-color" content="#0a0d13" />
+  <link rel="canonical" href="https://bladsvytro.github.io/en/" />
+  <link rel="alternate" hreflang="ru" href="https://bladsvytro.github.io/" />
+  <link rel="alternate" hreflang="en" href="https://bladsvytro.github.io/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://bladsvytro.github.io/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vladislav Naumov — Backend Developer (Go)" />
+  <meta property="og:description" content="Pet projects in Go and C, freelance landings and Telegram bots. Resume and contacts." />
+  <meta property="og:image" content="https://bladsvytro.github.io/assets/img/og-cover.png" />
+  <meta property="og:url" content="https://bladsvytro.github.io/en/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2300add8'/%3E%3Cstop offset='1' stop-color='%238b5cf6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Ctext x='16' y='22' font-size='14' font-weight='700' font-family='Arial,sans-serif' fill='white' text-anchor='middle'%3EVN%3C/text%3E%3C/svg%3E" />
+  <link rel="manifest" href="../site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org", "@type": "Person",
+    "name": "Vladislav Naumov", "jobTitle": "Backend Developer (Go)",
+    "address": { "@type": "PostalAddress", "addressLocality": "Veliky Novgorod", "addressCountry": "RU" },
+    "email": "mailto:blads.vytro@gmail.com", "telephone": "+79116141760",
+    "url": "https://bladsvytro.github.io/en/",
+    "sameAs": ["https://github.com/bladsvytro", "https://t.me/Blads_VYTro"],
+    "knowsAbout": ["Go", "gRPC", "PostgreSQL", "Redis", "Kafka", "Docker", "Linux", "C", "Python"]
+  }
+  </script>
+
+  <script type="module" src="../js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#projects">Skip to projects</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+      <symbol id="i-tg" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+      <symbol id="i-ext" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+      <symbol id="i-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></symbol>
+      <symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><line x1="6" y1="7" x2="6.01" y2="7"/><line x1="6" y1="17" x2="6.01" y2="17"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="logo" href="#top" aria-label="Home">
+        <span class="logo__mark">VN</span><span><b>Vladislav</b> <span>Naumov</span></span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu">
+          <span class="nav__burger" aria-hidden="true"></span><span class="u-visually-hidden">Menu</span>
+        </button>
+        <ul class="nav__menu" id="nav-menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="lang-switch" aria-label="Language">
+        <a class="lang" href="../" hreflang="ru">RU</a>
+        <a class="lang lang--active" href="./" aria-current="page">EN</a>
+      </div>
+      <a class="btn btn--ghost btn--sm" href="resume.html"><svg class="ic"><use href="#i-file"/></svg> Resume</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div data-reveal>
+          <div class="hero__id">
+            <span class="hero__avatar"><img src="../assets/img/avatar.webp" alt="Vladislav Naumov" /></span>
+            <span class="status"><i></i> Available for work</span>
+          </div>
+          <p class="eyebrow">Backend developer</p>
+          <h1 class="hero__title">I build <span class="grad">backend in Go</span><br>and ship projects to production</h1>
+          <p class="hero__role">Go&nbsp;·&nbsp;<span id="typed" class="typed"></span><span class="caret">▋</span></p>
+          <p class="hero__lead">I design services and APIs in Go, comfortable with C and Python. The portfolio covers pet projects,
+            turnkey freelance landings and Telegram bots. Open to new projects and interesting challenges.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects">See projects</a>
+            <a class="btn btn--ghost" href="../assets/resume-naumov-en.pdf" download><svg class="ic"><use href="#i-download"/></svg> Download CV (PDF)</a>
+          </div>
+          <div class="hero__contacts">
+            <a class="chip" href="https://github.com/bladsvytro" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> GitHub</a>
+            <a class="chip" href="https://t.me/Blads_VYTro" target="_blank" rel="noopener"><svg class="ic"><use href="#i-tg"/></svg> @Blads_VYTro</a>
+            <a class="chip" href="mailto:blads.vytro@gmail.com"><svg class="ic"><use href="#i-mail"/></svg> Email</a>
+            <a class="chip" href="tel:+79116141760"><svg class="ic"><use href="#i-phone"/></svg> +7 911 614-17-60</a>
+            <span class="chip"><svg class="ic"><use href="#i-pin"/></svg> Veliky Novgorod</span>
+          </div>
+        </div>
+        <div data-reveal>
+          <div class="codecard">
+            <div class="codecard__bar"><i></i><i></i><i></i><span>main.go</span></div>
+<pre><span class="k">package</span> main
+
+<span class="k">import</span> (
+  <span class="s">"log"</span>
+  <span class="s">"net/http"</span>
+)
+
+<span class="c">// hi from the portfolio 👋</span>
+<span class="k">func</span> <span class="f">main</span>() {
+  http.<span class="f">HandleFunc</span>(<span class="s">"/hire"</span>, <span class="k">func</span>(w http.ResponseWriter, r *http.Request) {
+    w.<span class="f">Write</span>([]<span class="k">byte</span>(<span class="s">"Vladislav Naumov — Go backend"</span>))
+  })
+  log.<span class="f">Fatal</span>(http.<span class="f">ListenAndServe</span>(<span class="s">":8080"</span>, <span class="k">nil</span>))
+}</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="about">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">About</p>
+          <h2 class="section__title">An engineer who ships</h2>
+          <p class="section__subtitle">I design and assemble services in Go, work with low-level C,
+            and take freelance orders for landings and bots — bringing every project to a working, deployed state.</p>
+        </div>
+        <div class="stats" data-reveal>
+          <div class="stat"><b>16</b><span>projects in the portfolio</span></div>
+          <div class="stat"><b>Go · C · Py</b><span>primary languages</span></div>
+          <div class="stat"><b>10/10</b><span>projects deployed</span></div>
+          <div class="stat"><b>Open</b><span>to work and orders</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Stack</p>
+          <h2 class="section__title">Skills &amp; technologies</h2>
+        </div>
+        <div class="skills" data-reveal>
+          <div class="skillgroup"><h3>// languages</h3><div class="skillgroup__list">
+            <span class="tag">Go</span><span class="tag">C / C++</span><span class="tag">Python</span>
+            <span class="tag">TypeScript</span><span class="tag">SQL</span><span class="tag">HTML</span></div></div>
+          <div class="skillgroup"><h3>// backend</h3><div class="skillgroup__list">
+            <span class="tag">gRPC</span><span class="tag">REST</span><span class="tag">Kafka</span>
+            <span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">MySQL</span>
+            <span class="tag">OOP</span><span class="tag">Architecture</span></div></div>
+          <div class="skillgroup"><h3>// devops · tools</h3><div class="skillgroup__list">
+            <span class="tag">Docker</span><span class="tag">Docker Compose</span><span class="tag">GitLab CI</span>
+            <span class="tag">Linux</span><span class="tag">Git</span><span class="tag">TCP/IP</span></div></div>
+          <div class="skillgroup"><h3>// more</h3><div class="skillgroup__list">
+            <span class="tag">NumPy</span><span class="tag">WebSocket</span><span class="tag">Makefile</span>
+            <span class="tag">English</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="projects">
+      <div class="container">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow">Portfolio</p>
+          <h2 class="section__title">Projects</h2>
+          <p class="section__subtitle">Backend services, freelance landings and Telegram bots. Sources and live demos for everything.</p>
+        </div>
+
+        <div class="filters" data-reveal role="tablist">
+          <button class="filter is-active" data-filter="all">All</button>
+          <button class="filter" data-filter="backend">Backend (Go · C)</button>
+          <button class="filter" data-filter="landing">Landings</button>
+          <button class="filter" data-filter="bot">Telegram bots</button>
+        </div>
+
+        <div class="grid" id="grid" data-reveal>
+
+          <article class="card" data-cat="backend">
+            <div class="card__media"><img class="shot" src="../assets/img/messenger.webp" alt="BLADS messenger UI" loading="lazy" /><span class="card__badge">Go · TypeScript</span></div>
+            <div class="card__body">
+              <h3 class="card__title">Messenger</h3>
+              <p class="card__desc">Full-stack BLADS messenger: Go backend services, TypeScript frontend,
+                real-time messaging, PostgreSQL and containerisation.</p>
+              <div class="card__tags"><span class="tag">Go</span><span class="tag">TypeScript</span><span class="tag">WebSocket</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/Blads_massanger" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="backend">
+            <div class="card__media"><img class="shot" src="../assets/img/yolo.webp" alt="YOLO_commander — object detection" loading="lazy" /><span class="card__badge">DevOps · team</span></div>
+            <div class="card__body">
+              <h3 class="card__title">YOLO_commander</h3>
+              <p class="card__desc">Team project, role: <b>DevOps</b>. CI/CD setup, containerisation
+                (Docker / Compose), build and deploy, environment configuration and automation.</p>
+              <div class="card__tags"><span class="tag">DevOps</span><span class="tag">CI/CD</span><span class="tag">Docker</span><span class="tag">Linux</span><span class="tag">Bash</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://gitverse.ru/3311yolo_organization/YOLO_commander" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg> GitVerse</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="backend">
+            <div class="card__media"><img class="shot" src="../assets/img/rest-code.webp" alt="REST service in Go — main.go" loading="lazy" /><span class="card__badge">Go · Gin</span></div>
+            <div class="card__body">
+              <h3 class="card__title">Subscription API (REST in Go)</h3>
+              <p class="card__desc">Online-subscription aggregation service built on Gin: CRUD + analytics, Swagger docs,
+                validation (validator.v10), zap logging, unit tests, graceful shutdown, Docker.</p>
+              <div class="card__tags"><span class="tag">Go</span><span class="tag">Gin</span><span class="tag">Swagger</span><span class="tag">PostgreSQL</span><span class="tag">Tests</span><span class="tag">Docker</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/effective-mobile_test" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="backend">
+            <div class="card__media"><img class="shot" src="../assets/img/shortlink.webp" alt="URL shortener interface" loading="lazy" /><span class="card__badge">Go</span></div>
+            <div class="card__body">
+              <h3 class="card__title">URL shortener</h3>
+              <p class="card__desc">URL shortener in Go: short-code generation, redirects, link storage.
+                A learning service to practice idiomatic Go and storage handling.</p>
+              <div class="card__tags"><span class="tag">Go</span><span class="tag">HTTP</span><span class="tag">Storage</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/Shortlink-servise-Go" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="backend">
+            <div class="card__media"><img class="shot" src="../assets/img/ndm-code.webp" alt="Async server in C — server.c (epoll)" loading="lazy" /><span class="card__badge">C · epoll</span></div>
+            <div class="card__body">
+              <h3 class="card__title">Async client-server</h3>
+              <p class="card__desc">Systems programming in C: asynchronous TCP client-server over sockets
+                (epoll), built with Makefile. NDM test assignment.</p>
+              <div class="card__tags"><span class="tag">C</span><span class="tag">epoll</span><span class="tag">TCP/IP</span><span class="tag">Sockets</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/NDM_Test" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="backend">
+            <div class="card__media"><img class="shot" src="../assets/img/rental.webp" alt="Home-rental site — catalog" loading="lazy" style="object-position:center" /><span class="card__badge">Go · HTML</span></div>
+            <div class="card__body">
+              <h3 class="card__title">Home rental website</h3>
+              <p class="card__desc">Web app for renting housing: Go backend with HTML templates,
+                listings catalog and per-property pages.</p>
+              <div class="card__tags"><span class="tag">Go</span><span class="tag">HTML</span><span class="tag">Templates</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/home_Arenda" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="landing">
+            <div class="card__media collage">
+              <img class="desk" src="../assets/img/construction-desktop.webp" alt="Construction company landing" loading="lazy" />
+              <img class="phone" src="../assets/img/construction-mobile.webp" alt="Mobile version" loading="lazy" />
+              <span class="card__badge">Landing</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">StroyResurs — turnkey renovation</h3>
+              <p class="card__desc">Construction company landing: cost calculator, lead form,
+                gallery, map. Responsive, SEO, deployed on GitHub Pages.</p>
+              <div class="card__tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">a11y</span></div>
+              <div class="card__links">
+                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/construction-landing/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg> Demo</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/construction-landing" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="landing">
+            <div class="card__media collage">
+              <img class="desk" src="../assets/img/nail-studio-desktop.webp" alt="Nail studio landing" loading="lazy" />
+              <img class="phone" src="../assets/img/nail-studio-mobile.webp" alt="Mobile version" loading="lazy" />
+              <span class="card__badge">Landing</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Lakritsa — nail studio</h3>
+              <p class="card__desc">Online booking (master/service/date/time), portfolio gallery, pricing, masters.
+                Pastel design, micro-interactions, Telegram delivery.</p>
+              <div class="card__tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">Telegram API</span></div>
+              <div class="card__links">
+                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/nail-studio-landing/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg> Demo</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/nail-studio-landing" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="landing">
+            <div class="card__media collage">
+              <img class="desk" src="../assets/img/legal-consult-desktop.webp" alt="Law firm landing" loading="lazy" />
+              <img class="phone" src="../assets/img/legal-consult-mobile.webp" alt="Mobile version" loading="lazy" />
+              <span class="card__badge">Landing</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Lex·Zashchita — law firm</h3>
+              <p class="card__desc">Premium landing: navy + gold, cost calculator, case timeline,
+                PDF documents, Web3Forms submission. Serif typography.</p>
+              <div class="card__tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">Web3Forms</span></div>
+              <div class="card__links">
+                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/legal-consult-landing/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg> Demo</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/legal-consult-landing" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="landing">
+            <div class="card__media collage">
+              <img class="desk" src="../assets/img/english-webinar-desktop.webp" alt="English webinar landing" loading="lazy" />
+              <img class="phone" src="../assets/img/english-webinar-mobile.webp" alt="Mobile version" loading="lazy" />
+              <span class="card__badge">Landing</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">SpeakUp — English webinar</h3>
+              <p class="card__desc">Webinar sign-up: live countdown, programme, bento block,
+                lazy YouTube, Google Sheets form. Glassmorphism.</p>
+              <div class="card__tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">Apps Script</span></div>
+              <div class="card__links">
+                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/english-webinar-landing/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg> Demo</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/english-webinar-landing" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="landing">
+            <div class="card__media collage">
+              <img class="desk" src="../assets/img/fitness-club-desktop.webp" alt="Fitness club landing" loading="lazy" />
+              <img class="phone" src="../assets/img/fitness-club-mobile.webp" alt="Mobile version" loading="lazy" />
+              <span class="card__badge">Landing</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">IMPULSE — fitness club</h3>
+              <p class="card__desc">Energetic landing: black + neon, schedule table, trainer cards,
+                trial-session form to Telegram. Bold Oswald typography.</p>
+              <div class="card__tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">Grid</span></div>
+              <div class="card__links">
+                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/fitness-club-landing/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg> Demo</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/fitness-club-landing" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="bot">
+            <div class="card__media"><img class="shot" src="../assets/img/bot-construction.webp" alt="Construction lead bot" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
+            <div class="card__body">
+              <h3 class="card__title">Lead bot (construction)</h3>
+              <p class="card__desc">FSM request for an on-site measurement, button-driven cost calculator, manager notifications,
+                Google Sheets storage.</p>
+              <div class="card__tags"><span class="tag">Python</span><span class="tag">aiogram 3</span><span class="tag">Google Sheets</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/construction-leadbot" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Code</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="bot">
+            <div class="card__media"><img class="shot" src="../assets/img/bot-nail.webp" alt="Nail booking bot" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
+            <div class="card__body">
+              <h3 class="card__title">Booking bot (nail studio)</h3>
+              <p class="card__desc">Slot booking in SQLite, 2-hour reminder (APScheduler), portfolio by
+                categories, admin commands.</p>
+              <div class="card__tags"><span class="tag">Python</span><span class="tag">aiogram 3</span><span class="tag">SQLite</span><span class="tag">APScheduler</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/nail-booking-bot" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Code</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="bot">
+            <div class="card__media"><img class="shot" src="../assets/img/bot-hr.webp" alt="HR screening bot" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
+            <div class="card__body">
+              <h3 class="card__title">HR screening bot</h3>
+              <p class="card__desc">10-question survey, keyword-based auto-scoring, SQLite storage,
+                candidate report to the HR chat.</p>
+              <div class="card__tags"><span class="tag">Python</span><span class="tag">aiogram 3</span><span class="tag">SQLite</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/hr-screening-bot" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Code</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="bot">
+            <div class="card__media"><img class="shot" src="../assets/img/bot-shop.webp" alt="Shop assistant bot" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
+            <div class="card__body">
+              <h3 class="card__title">Shop assistant bot</h3>
+              <p class="card__desc">Order tracking by number, button-driven FAQ, operator handoff, /myorders by
+                contact. Optional Redis/webhook.</p>
+              <div class="card__tags"><span class="tag">Python</span><span class="tag">aiogram 3</span><span class="tag">Redis</span><span class="tag">Webhook</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/shop-assistant-bot" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Code</a></div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="bot">
+            <div class="card__media"><img class="shot" src="../assets/img/bot-resume.webp" alt="Resume-builder bot" loading="lazy" /><span class="card__badge">aiogram 3</span></div>
+            <div class="card__body">
+              <h3 class="card__title">Resume-builder bot</h3>
+              <p class="card__desc">Step-by-step data collection, HTML resume generation (XSS-safe) and PDF via
+                WeasyPrint, SQLite storage, editing.</p>
+              <div class="card__tags"><span class="tag">Python</span><span class="tag">aiogram 3</span><span class="tag">WeasyPrint</span><span class="tag">SQLite</span></div>
+              <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/resume-builder-bot" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Code</a></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact" data-reveal>
+        <p class="eyebrow" style="justify-content:center">Contact</p>
+        <h2 class="section__title">Ready for work and internships</h2>
+        <p class="section__subtitle">Drop me a line on Telegram or by email — I reply quickly. Open to backend (Go)
+          roles and freelance orders.</p>
+        <div class="hero__contacts" style="justify-content:center;margin-top:1.6rem">
+          <a class="chip" href="https://t.me/Blads_VYTro" target="_blank" rel="noopener"><svg class="ic"><use href="#i-tg"/></svg> @Blads_VYTro</a>
+          <button class="chip" type="button" data-copy="blads.vytro@gmail.com"><svg class="ic"><use href="#i-mail"/></svg> blads.vytro@gmail.com <span class="copy-hint">copy</span></button>
+          <a class="chip" href="tel:+79116141760"><svg class="ic"><use href="#i-phone"/></svg> +7 911 614-17-60</a>
+          <a class="chip" href="https://github.com/bladsvytro" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> github.com/bladsvytro</a>
+        </div>
+        <div class="hero__actions" style="justify-content:center;margin-top:1.8rem">
+          <a class="btn btn--primary" href="https://t.me/Blads_VYTro" target="_blank" rel="noopener"><svg class="ic"><use href="#i-tg"/></svg> Message on Telegram</a>
+          <a class="btn btn--ghost" href="resume.html">Open resume</a>
+          <a class="btn btn--ghost" href="../assets/resume-naumov-en.pdf" download>Download PDF</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© <span id="year">2026</span> Vladislav Naumov · Veliky Novgorod</p>
+      <p>Hand-coded in HTML/CSS/JS · <a href="#top" data-top>back to top <svg class="ic"><use href="#i-up"/></svg></a></p>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Close">✕</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -57,6 +57,11 @@ h1,h2,h3{font-family:var(--font-display);line-height:1.1;font-weight:700;letter-
 /* Header */
 .site-header{position:sticky;top:0;z-index:var(--z-header);background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(160%) blur(12px);border-bottom:1px solid var(--line)}
 .site-header__inner{display:flex;align-items:center;gap:1rem;padding-block:.85rem}
+.lang-switch{display:inline-flex;align-items:center;gap:2px;padding:3px;border:1px solid var(--line,#232c3a);border-radius:999px;background:rgba(255,255,255,.02)}
+.lang-switch .lang{font:600 12px/1 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.06em;padding:6px 10px;border-radius:999px;color:var(--muted,#8a96a8);text-decoration:none;transition:.18s}
+.lang-switch .lang:hover{color:#fff}
+.lang-switch .lang--active{background:linear-gradient(135deg,var(--go,#00add8),var(--violet,#8b5cf6));color:#fff}
+@media (max-width:560px){.lang-switch .lang{padding:5px 8px;font-size:11px}}
 .logo{display:inline-flex;align-items:center;gap:.6rem;color:var(--text);font-family:var(--font-display);font-weight:700}
 .logo__mark{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--grad);color:#fff;font-size:.95rem}
 .logo b{color:#fff} .logo span{color:var(--go-2)}
