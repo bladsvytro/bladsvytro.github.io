@@ -98,7 +98,7 @@
           </div>
           <p class="eyebrow">Backend-разработчик</p>
           <h1 class="hero__title">Пишу <span class="grad">бэкенд на Go</span><br>и довожу проекты до продакшена</h1>
-          <p class="hero__role">Go&nbsp;·&nbsp;<span id="typed" class="typed"></span><span class="caret">▋</span></p>
+          <p class="hero__role">Go&nbsp;·&nbsp;<span id="typed" class="typed" data-words='["gRPC-сервисы","Kafka и Redis","PostgreSQL","Docker · Linux","распределённые системы"]'></span><span class="caret">▋</span></p>
           <p class="hero__lead">Создаю сервисы и API на Go, разбираюсь в C и Python. В портфолио — пет-проекты,
             фриланс-лендинги под ключ и Telegram-боты. Открыт к новым проектам и интересным задачам.</p>
           <div class="hero__actions">
@@ -192,6 +192,7 @@
           <button class="filter is-active" data-filter="all">Все</button>
           <button class="filter" data-filter="backend">Бэкенд (Go · C)</button>
           <button class="filter" data-filter="landing">Лендинги</button>
+          <button class="filter" data-filter="fullstack">Fullstack</button>
           <button class="filter" data-filter="bot">Telegram-боты</button>
         </div>
 
@@ -261,6 +262,22 @@
                 каталог объявлений и страницы объектов.</p>
               <div class="card__tags"><span class="tag">Go</span><span class="tag">HTML</span><span class="tag">Templates</span></div>
               <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/home_Arenda" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> Код на GitHub</a></div>
+            </div>
+          </article>
+
+          <!-- ===== Fullstack / games ===== -->
+          <article class="card" data-cat="fullstack">
+            <div class="card__media"><img class="shot" src="assets/img/ttt-game.png" alt="Крестики-нолики с рейтингом — игровой экран" loading="lazy" /><span class="card__badge">JS · CF Workers · Firebase</span></div>
+            <div class="card__body">
+              <h3 class="card__title">Крестики-нолики с рейтингом</h3>
+              <p class="card__desc">Fullstack-игра: Elo-рейтинг (Классика / Реверс), бот на minimax с α-β pruning,
+                P2P онлайн (WebRTC/PeerJS), подбор соперника по рейтингу (Firebase RTDB),
+                обновление таблицы лидеров через GitHub Actions + Cloudflare Worker.</p>
+              <div class="card__tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Cloudflare Workers</span><span class="tag">GitHub Actions</span><span class="tag">Firebase</span><span class="tag">WebRTC</span></div>
+              <div class="card__links">
+                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/ttt-rating-game" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg> Играть</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/ttt-rating-game" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a>
+              </div>
             </div>
           </article>
 

@@ -96,7 +96,7 @@
           </div>
           <p class="eyebrow">Backend developer</p>
           <h1 class="hero__title">I build <span class="grad">backend in Go</span><br>and ship projects to production</h1>
-          <p class="hero__role">Go&nbsp;·&nbsp;<span id="typed" class="typed"></span><span class="caret">▋</span></p>
+          <p class="hero__role">Go&nbsp;·&nbsp;<span id="typed" class="typed" data-words='["gRPC services","Kafka &amp; Redis","PostgreSQL","Docker · Linux","distributed systems"]'></span><span class="caret">▋</span></p>
           <p class="hero__lead">I design services and APIs in Go, comfortable with C and Python. The portfolio covers pet projects,
             turnkey freelance landings and Telegram bots. Open to new projects and interesting challenges.</p>
           <div class="hero__actions">
@@ -186,6 +186,7 @@
           <button class="filter is-active" data-filter="all">All</button>
           <button class="filter" data-filter="backend">Backend (Go · C)</button>
           <button class="filter" data-filter="landing">Landings</button>
+          <button class="filter" data-filter="fullstack">Fullstack</button>
           <button class="filter" data-filter="bot">Telegram bots</button>
         </div>
 
@@ -254,6 +255,22 @@
                 listings catalog and per-property pages.</p>
               <div class="card__tags"><span class="tag">Go</span><span class="tag">HTML</span><span class="tag">Templates</span></div>
               <div class="card__links"><a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/home_Arenda" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg> GitHub</a></div>
+            </div>
+          </article>
+
+          <!-- ===== Fullstack / games ===== -->
+          <article class="card" data-cat="fullstack">
+            <div class="card__media"><img class="shot" src="../assets/img/ttt-game.png" alt="Tic-Tac-Toe with Rating — game screen" loading="lazy" /><span class="card__badge">JS · CF Workers · Firebase</span></div>
+            <div class="card__body">
+              <h3 class="card__title">Tic-Tac-Toe with Rating</h3>
+              <p class="card__desc">Full-stack game: Elo rating (Classic / Reverse modes), minimax AI with α-β pruning,
+                P2P online play (WebRTC/PeerJS), rating-based matchmaking (Firebase RTDB),
+                leaderboard updates via GitHub Actions + Cloudflare Worker proxy.</p>
+              <div class="card__tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Cloudflare Workers</span><span class="tag">GitHub Actions</span><span class="tag">Firebase</span><span class="tag">WebRTC</span></div>
+              <div class="card__links">
+                <a class="btn btn--primary btn--sm" href="https://bladsvytro.github.io/ttt-rating-game" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ext"/></svg> Play</a>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/bladsvytro/ttt-rating-game" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a>
+              </div>
             </div>
           </article>
 

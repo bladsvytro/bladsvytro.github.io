@@ -35,9 +35,8 @@ filters.forEach((btn) => {
 /* Типизатор стека в hero (изюминка) */
 const typed = document.getElementById("typed");
 if (typed && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const isEN = document.documentElement.lang === "en";
-  const words = isEN
-    ? ["gRPC services", "Kafka & Redis", "PostgreSQL", "Docker · Linux", "distributed systems"]
+  const words = typed.dataset.words
+    ? JSON.parse(typed.dataset.words)
     : ["gRPC-сервисы", "Kafka и Redis", "PostgreSQL", "Docker · Linux", "распределённые системы"];
   let wi = 0, ci = 0, deleting = false;
   const tick = () => {
